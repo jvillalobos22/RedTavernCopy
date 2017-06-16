@@ -1,3 +1,12 @@
+# Red Tavern WordPress Template
+
+This WordPress template was designed and developed by DK Web Design for use by Red Tavern. The live site can be found at [redtavern.com](http://104.238.96.231/~newredtavern/).
+
+Below you will find information that may be useful to those working on this template in the future.
+
+
+
+## This template was built using JointsWP boiler plate.
 Find out more here: www.jointswp.com  
 Demo: www.jointswp.com/demo
 
