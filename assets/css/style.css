@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /******************************************************************
-	
+
 Stylesheet: Main Stylesheet
 
 Here's where the magic happens. Here is where you import
 all of your Sass files so they can compile into one
-CSS file. 
+CSS file.
 
 ******************************************************************/
 /******************************************************************
@@ -937,7 +937,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -1808,7 +1808,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Petit Formal Script", "Trajan Pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   color: inherit;
@@ -4721,3 +4721,19 @@ to display none.
   .respond-form,
   nav {
     display: none; } }
+
+@font-face {
+  font-family: Trajan Pro;
+  src: url("../fonts/Trajan-Pro-Regular.ttf");
+  font-weight: normal; }
+
+h3, h4 {
+  font-family: 'Trajan Pro'; }
+
+.dk_hero {
+  height: 600px;
+  background-image: url("../images/homepage-hero.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
