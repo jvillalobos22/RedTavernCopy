@@ -93,7 +93,7 @@ h3, h4 {
     ul {
         text-align: center;
     }
-    
+
     .menu li.active a {
         background: none;
         border-bottom: 3px solid #fff;
@@ -106,6 +106,7 @@ h3, h4 {
     a {
         color: #fff;
         font-family: $trajan;
+        border-top: 3px solid transparent;
         border-bottom: 3px solid transparent;
 
         &:hover {
