@@ -1,5 +1,9 @@
 <!doctype html>
+<?php
+$images_directory = get_template_directory_uri().'/assets/images';
+// echo '$images_directory = '.$images_directory;
 
+?>
   <html class="no-js"  <?php language_attributes(); ?>>
 
 	<head>
@@ -47,12 +51,19 @@
 
 			<div class="off-canvas-content" data-off-canvas-content>
                 <div class="dk_hero">
-                    <div class="dk_leftbox">
-                        <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/redtavern-logo.png" alt="<?php bloginfo('name'); ?> Logo"></a>
+                    <div class="dk_herobar">
+                        <div class="dk_leftbox">
+                            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/redtavern-logo.png" alt="<?php bloginfo('name'); ?> Logo"></a>
+                        </div><!--
+                        --><div class="dk_rightbox">
+                            <span><a href="tel:+15308943463">(530) 894-3463</a>
+                            Located at 1250 Esplanade, Chico CA 95926</span>
+                        </div>
                     </div>
-                    <div class="dk_rightbox">
-                        <a href="tel:+15308943463">(530) 894-3463</a>
+                    <div class="dk_caption">
+                        <h2>Some Heading Can Go Here</h2>
                     </div>
+                    <img data-interchange="[<?php echo $images_directory; ?>/homepage-hero-small.jpg, small], [<?php echo $images_directory; ?>/homepage-hero-medium.jpg, medium], [<?php echo $images_directory; ?>/homepage-hero.jpg, large]" alt="Home Page Hero">
                 </div>
 				<header class="header" role="banner">
 

@@ -1,12 +1,164 @@
+$trajan: 'Trajan Pro', 'Helvetica', sans-serif;
+
 h3, h4 {
-  font-family: 'Trajan Pro';
+    font-family: $trajan;
 }
 
 .dk_hero {
-    height: 600px;
-    background-image: url('../images/homepage-hero.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    position: relative;
+
+    img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        z-index: -1;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 0;
+    }
+
+    .dk_caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        z-index: 1;
+    }
+}
+
+.dk_herobar {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    margin: 0 auto;
+    z-index: 1;
+
+    .dk_leftbox, .dk_rightbox {
+        flex: 1;
+    }
+
+    .dk_leftbox {
+        text-align: left;
+        padding-left: 0.9375rem;
+        img {
+            width: 100%;
+            max-width: 295px;
+            display: inline-block;
+        }
+    }
+
+    .dk_rightbox {
+        text-align: right;
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        padding-right: 0.9375rem;
+
+        span {
+            color: #fff;
+        }
+        a {
+            display: block;
+            font-size: 1.875rem;
+            color: #fff;
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.dk_topbar {
+    background: linear-gradient(#b90e2a, #7e1222);
+
+    ul {
+        text-align: center;
+    }
+    
+    .menu li.active a {
+        background: none;
+        border-bottom: 3px solid #fff;
+    }
+
+    .menu.medium-horizontal > li {
+        display: inline-block;
+    }
+
+    a {
+        color: #fff;
+        font-family: $trajan;
+        border-bottom: 3px solid transparent;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    // Medium Breakpoint
+}
+
+@media screen and (max-width: 799px) {
+    .dk_herobar {
+        .dk_leftbox {
+            img {
+                max-width: 245px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 639px) {
+    // Small Breakpoint
+    .dk_herobar {
+        display: block;
+        top: 1rem;
+
+        .dk_leftbox, .dk_rightbox {
+            display: block;
+            text-align: center;
+            img {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .dk_hero {
+        .dk_caption {
+            align-items: flex-end;
+            padding-bottom: 3rem;
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .dk_hero {
+        .dk_caption {
+            padding-bottom: 1rem;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 .DS_Store
 assets/scss/.sass-cache/*
+assets/css
 node_modules/
 bower_components/
 npm-debug.log
