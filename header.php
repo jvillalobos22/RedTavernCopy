@@ -33,7 +33,9 @@ $images_directory = get_template_directory_uri().'/assets/images';
 
     <!-- Google Fonts for Petit Formal Script and Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script|Roboto:300,400" rel="stylesheet">
-
+    <!-- Typekit Fonts -->
+    <script src="https://use.typekit.net/zlw8apj.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 		<?php wp_head(); ?>
 
 		<!-- Drop Google Analytics here -->

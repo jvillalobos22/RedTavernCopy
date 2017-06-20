@@ -1,7 +1,62 @@
-$trajan: 'Trajan Pro', 'Helvetica', sans-serif;
+/*==============================================================================
+    _dkstyles.scss
+
+    Author: Juan Villalobos [juanvillalobos.me | juan@dkwebdesign.com]
+
+    This file is the main stylesheet for the Red Tavern WordPress Theme. It
+    holds all the styles for the main theme but not the login or admin styles.
+
+    Table of Contents
+
+    #Variables
+	#Global Styles
+    #Button Styles
+  	#Header/Nav
+    #Off Canvas Nav
+    #Content Area
+    #Callout Styles
+	#Homepage
+    #Secondary Page Templates
+    #Footer
+	#Media Queries
+==============================================================================*/
+/*==============================================================================
+  	#Variables
+==============================================================================*/
+$trajan: 'trajan-pro-3', 'Trajan Pro', 'Helvetica', sans-serif;
 $mainRed: #b20d28;
 $darkRed: #7f1222;
 $bgBeige: #ecf0dd;
+
+/*===============================
+Social Media Color Variables
+===============================*/
+$twitter: #00aced;
+$facebook: #3b5998;
+$googleplus: #dd4b39;
+$pinterest: #cb2027;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+$vimeo: #aad450;
+$tumblr: #32506d;
+$instagram: #517fa4;
+$flickr: #ff0084;
+$dribbble: #ea4c89;
+$quora: #a82400;
+$foursquare: #0072b1;
+$forrst: #5B9A68;
+$vk: #45668e;
+$wordpress: #21759b;
+$stumbleupon: #EB4823;
+$yahoo: #7B0099;
+$blogger: #fb8f3d;
+$soundcloud: #ff3a00;
+$yelp: #d32323;
+
+
+/*==============================================================================
+  	#Global Styles
+==============================================================================*/
 
 h1 {
     font-size: 2.25rem;
@@ -52,6 +107,17 @@ p, li, span, div {
     }
 }
 
+.dk_flexcontainer_wide {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem 0.9375rem;
+    margin: 0 auto;
+}
+
+/*==============================================================================
+  	#Header/Nav
+==============================================================================*/
 .dk_hero {
     position: relative;
 
@@ -168,11 +234,20 @@ p, li, span, div {
     }
 }
 
+
+/*==============================================================================
+  	#Content Area
+==============================================================================*/
+
 .dk_main {
     background-color: $bgBeige;
     padding-top: 2rem;
 }
 
+
+/*==============================================================================
+  	#Home Page
+==============================================================================*/
 .dk_homemain {
     #main {
         h2 {
@@ -182,6 +257,11 @@ p, li, span, div {
 }
 
 .dk_home_callouts {
+    .dk_flexcontainer_wide {
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
     .dk_callout {
         width: 50%;
         display: flex;
@@ -205,15 +285,10 @@ p, li, span, div {
     }
 }
 
-.dk_flexcontainer_wide {
-    display: flex;
-    width: 100%;
-    max-width: 1400px;
-    padding: 2rem 0.9375rem;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: stretch;
-}
+
+/*==============================================================================
+  	#Callouts/Cards
+==============================================================================*/
 
 .dk_cardscontainer {
     display: flex;
@@ -310,6 +385,45 @@ p, li, span, div {
     }
 }
 
+
+/*==============================================================================
+  	#Footer
+==============================================================================*/
+.dk_footer_cta {
+    background-color: $bgBeige;
+
+    .dk_flexcontainer_wide {
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+            font-family: $header-font-family;
+        }
+        input {
+            width: 320px;
+            margin: 0 1.5rem;
+        }
+
+        a {
+            padding: 0.5rem;
+            background-color: $mainRed;
+            color: #fff;
+            font-family: $trajan;
+
+            &:hover {
+                background-color: darken($mainRed, 10%);
+            }
+        }
+    }
+}
+
+.dk_footer_main {
+    background: linear-gradient(#b90e2a, #7e1222);
+}
+
+/*==============================================================================
+  	#Media Queries
+==============================================================================*/
 @media screen and (max-width: 1099px) {
     .dk_home_callouts {
         .dk_callout {
@@ -324,7 +438,7 @@ p, li, span, div {
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
     // Medium Breakpoint
     .dk_flexcontainer_wide {
         flex-wrap: wrap;
