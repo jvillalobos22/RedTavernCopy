@@ -1,7 +1,55 @@
 $trajan: 'Trajan Pro', 'Helvetica', sans-serif;
+$mainRed: #b20d28;
+$darkRed: #7f1222;
+$bgBeige: #ecf0dd;
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.925rem;
+}
 
 h3, h4 {
     font-family: $trajan;
+}
+
+h2, h3, h4, h5, h6 {
+    &.dk_subheading {
+        font-family: $trajan;
+    }
+}
+
+h2.dk_subheading {
+    font-size: 1.25rem;
+}
+
+h3.dk_subheading {
+    font-size: 1.25rem;
+}
+
+p, li, span, div {
+    font-weight: lighter;
+}
+
+.dk_hr_rooster {
+    margin-top: 1.5rem;
+    position: relative;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        padding: 0 1rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -11px;
+        background-color: $bgBeige;
+    }
+    hr {
+        border-bottom: 1px solid $darkRed;
+    }
 }
 
 .dk_hero {
@@ -101,6 +149,11 @@ h3, h4 {
 
     .menu.medium-horizontal > li {
         display: inline-block;
+        padding: 0 1rem;
+
+        a {
+            padding: 0.7rem 0;
+        }
     }
 
     a {
@@ -115,9 +168,187 @@ h3, h4 {
     }
 }
 
+.dk_main {
+    background-color: $bgBeige;
+    padding-top: 2rem;
+}
+
+.dk_homemain {
+    #main {
+        h2 {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.dk_home_callouts {
+    .dk_callout {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+
+        &.one {
+            padding-right: 1rem;
+        }
+        &.two {
+            padding-left: 1rem;
+        }
+        .dk_img {
+            flex: 3;
+            padding-right: 1rem;
+        }
+        .dk_text {
+            flex: 7;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+    }
+}
+
+.dk_flexcontainer_wide {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem 0.9375rem;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.dk_cardscontainer {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem 0.9375rem;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: stretch;
+
+    .dk_homecard {
+        width: 32%;
+        background-color: $white;
+        text-align: center;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+        h3 {
+            font-family: $header-font-family;
+            font-size: 1.5rem;
+            padding: 0.75rem 0;
+            margin: 0;
+        }
+        p {
+            padding: 1.25rem 1rem 4.25rem 1rem;
+        }
+        a {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            padding: 0.625rem 0.25rem;
+            background-color: $mainRed;
+            color: #fff;
+            font-family: $trajan;
+            font-size: 1.125rem;
+            font-weight: bold;
+            text-shadow: -1px 2px 3px rgba(0,0,0,0.5);
+        }
+    }
+}
+
+.dk_home_testimonials {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: -2;
+    padding: 3rem 0.9375rem;
+    background-position: center;
+    background-size: cover;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.65);
+        z-index: -1;
+    }
+
+    p, span {
+        position: relative;
+        z-index: 5;
+    }
+
+    p {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+        margin-bottom: 2rem;
+        font-size: 1.25rem;
+        font-weight: normal;
+    }
+
+    span {
+        display: block;
+        margin: 0 auto;
+
+        &.dk_reviewer {
+            font-size: 2.25rem;
+            font-family: $header-font-family;
+        }
+
+        &.dk_review_source {
+            font-size: 0.875rem;
+            font-weight: normal;
+        }
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .dk_home_callouts {
+        .dk_callout {
+            &.one {
+                width: 53%;
+            }
+            &.two {
+                width: 47%;
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width: 1024px) {
     // Medium Breakpoint
+    .dk_flexcontainer_wide {
+        flex-wrap: wrap;
+    }
+    .dk_home_callouts {
+        .dk_callout {
+            margin-bottom: 1.5rem;
+            &.one, &.two {
+                width: 100%;
+            }
+            &.one {
+                padding-right: 0;
+            }
+            &.two {
+                padding-left: 0;
+            }
+            .dk_img {
+                flex: 1;
+            }
+            .dk_text {
+                flex: 4;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 799px) {
@@ -125,6 +356,23 @@ h3, h4 {
         .dk_leftbox {
             img {
                 max-width: 245px;
+            }
+        }
+    }
+
+    .dk_cardscontainer {
+        flex-wrap: wrap;
+
+        .dk_homecard {
+            width: 100%;
+            display: flex;
+            margin-bottom: 2rem;
+            .dk_top, .dk_bottom {
+                width: 50%;
+            }
+
+            .dk_bottom {
+                position: relative;
             }
         }
     }
@@ -154,12 +402,48 @@ h3, h4 {
             }
         }
     }
+
+    .dk_cardscontainer {
+        .dk_homecard {
+            display: block;
+
+            .dk_top, .dk_bottom {
+                width: 100%;
+            }
+
+            .dk_bottom {
+                position: static;
+            }
+        }
+    }
+
+    .dk_home_callouts {
+        .dk_callout {
+            &.two {
+                margin-bottom: 0;
+            }
+            .dk_img {
+                flex: 1;
+            }
+            .dk_text {
+                flex: 3;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 499px) {
     .dk_hero {
         .dk_caption {
             padding-bottom: 1rem;
+        }
+    }
+
+    .dk_home_callouts {
+        .dk_callout {
+            .dk_img {
+                display: none;
+            }
         }
     }
 }
