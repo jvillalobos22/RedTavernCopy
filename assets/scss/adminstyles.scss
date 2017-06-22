@@ -1,0 +1,218 @@
+.dk_sectionspace {
+    margin: 2rem 0;
+}
+
+.dk_meta_editor {
+    input, textarea {
+        max-width: 100%;
+    }
+    input {
+        width: 100%;
+        max-width: 500px;
+    }
+    input[type="button"] {
+        width: 200px;
+    }
+    label {
+        margin-top: 1.125rem;
+        display: block;
+
+        &.dk_inline_block {
+            display: inline-block;
+            margin-top: 0;
+        }
+    }
+    small {
+        display: block;
+    }
+
+    h4 + label {
+        margin-top: 0.25rem;
+    }
+
+    h4 {
+        margin-bottom: 0rem;
+    }
+
+    .image-preview {
+        padding: 0.5rem 0;
+
+        img {
+            max-width: 100%;
+            //max-width: 500px;
+        }
+    }
+
+    small {
+        line-height: 1.4;
+    }
+    fieldset {
+        position: relative;
+    }
+    fieldset, .dk_twocolumns {
+        border: 1px solid #e0e0e0;
+        padding: 0 10px 1rem 10px;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        //box-shadow: 1px 0 15px rgba(0,0,0,0.3), -1px 0 15px rgba(0,0,0,0.3), 0 3px 3px rgba(0,0,0,0.3);
+        input[type="text"].dk_subsection,input[type="phone"],input[type="email"], textarea {
+            width: 100%;
+        }
+
+        legend {
+            margin-left: 10px;
+            padding: 0 1rem;
+            font-weight: bold;
+            font-size: 1.125rem;
+        }
+    }
+    .dk_subsection_parent {
+        background-color: #f6f6f6;
+        legend {
+            background-color: #f6f6f6;
+            padding: 5px;
+            border: 1px solid #e0e0e0;
+        }
+    }
+    .dk_subsection {
+        background-color: #fff;
+        padding: 2rem 1rem 0.5rem 1rem;
+        margin-top: 1.25rem;
+        h4 {
+            margin-top: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            padding: 0.25rem;
+            background-color: #c3c3c3;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+    }
+}
+
+.dk_twocol_flex {
+    display: flex;
+    justify-content: space-between;
+
+    .dk_col {
+        width: 49%;
+    }
+}
+
+/*==================================================
+ * Effect 6
+ * ===============================================*/
+.dk_subsection
+{
+  	position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.dk_subsection:before, .dk_subsection:after
+{
+	content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.dk_subsection:after
+{
+	right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+
+fieldset {
+
+}
+.dk_meta_editor.dk_sidebar_meta {
+    .dk_twocolumns {
+        border: none;
+        padding: 0 10px 1rem 10px;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .image-preview img {
+        max-width: 250px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.dk_full {
+    width: 100%;
+}
+
+.dk_twocolumns {
+    fieldset {
+        margin: 1rem 10px;
+    }
+    .column {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+
+        &:first-child {
+            fieldset {
+                margin-left: 0;
+            }
+        }
+        &:last-child {
+            fieldset {
+                margin-right: 0;
+            }
+        }
+
+    }
+}
+
+.dk_custom_tax_styles, .dk_listing_new {
+    .dk_checkbox, input[type='text'] {
+        margin-bottom: 1rem;
+    }
+    label {
+        display: block;
+    }
+}
+
+.dk_optionspage {
+    table.form-table {
+        max-width: 800px;
+
+        input, textarea {
+            width: 100%;
+
+            &[type='checkbox'] {
+                width: 16px;
+            }
+        }
+    }
+
+    .dk_checkboxes {
+        label {
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        input[type='text'] {
+            margin-bottom: 0.75rem;
+        }
+    }
+}

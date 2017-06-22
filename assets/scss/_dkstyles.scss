@@ -402,6 +402,7 @@ p, li, span, div {
         input {
             width: 320px;
             margin: 0 1.5rem;
+            margin-bottom: 1rem;
         }
 
         a {
@@ -409,6 +410,7 @@ p, li, span, div {
             background-color: $mainRed;
             color: #fff;
             font-family: $trajan;
+            margin-bottom: 1rem;
 
             &:hover {
                 background-color: darken($mainRed, 10%);
@@ -419,6 +421,19 @@ p, li, span, div {
 
 .dk_footer_main {
     background: linear-gradient(#b90e2a, #7e1222);
+    text-align: center;
+    color: #fff;
+    padding: 1.5rem 0;
+
+    p.copyright {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    p a {
+        color: #fff;
+        font-weight: bold;
+    }
 }
 
 /*==============================================================================
@@ -460,6 +475,20 @@ p, li, span, div {
             }
             .dk_text {
                 flex: 4;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 899px) {
+    .dk_footer_cta {
+        .dk_flexcontainer_wide {
+            flex-wrap: wrap;
+
+            h4 {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 1rem;
             }
         }
     }
