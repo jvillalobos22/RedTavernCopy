@@ -27,6 +27,7 @@ $trajan: 'trajan-pro-3', 'Trajan Pro', 'Helvetica', sans-serif;
 $mainRed: #b20d28;
 $darkRed: #7f1222;
 $bgBeige: #ecf0dd;
+$borderColor: #dfe2d6;
 
 /*===============================
 Social Media Color Variables
@@ -86,6 +87,10 @@ h3.dk_subheading {
 
 p, li, span, div {
     font-weight: lighter;
+}
+
+hr.dk_redhr {
+    border-bottom: 1px solid $darkRed;
 }
 
 .dk_hr_rooster {
@@ -385,7 +390,58 @@ p, li, span, div {
     }
 }
 
+/*==============================================================================
+  	#Menu Pages
+==============================================================================*/
+.dk_menu {
+    h2 {
+        margin-bottom: 0;
+        font-size: 2.5rem;
+    }
+    hr {
+        margin-top: 0.5rem;
+    }
 
+    .dk_menuitems {
+        margin-bottom: 4rem;
+    }
+}
+
+.dk_menu_nav {
+
+    .dk_innerborder {
+        border: 1px solid $borderColor;
+        padding: 1.25rem 2rem;
+        margin-right: 1.5rem;
+    }
+    h1 {
+        font-family: $header-font-family;
+        margin-bottom: 1.125rem;
+        font-size: 1.925rem;
+    }
+    ul {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+    li {
+        display: block;
+        padding-bottom: 1.25rem;
+
+        &:last-child() {
+            padding-bottom: 0;
+        }
+        &.active {
+            a {
+                font-weight: bold;
+            }
+        }
+    }
+    a {
+        padding-left: 0;
+        color: $darkRed;
+        font-size: 1.325rem;
+    }
+}
 /*==============================================================================
   	#Footer
 ==============================================================================*/

@@ -38,6 +38,7 @@ require_once(get_template_directory().'/assets/functions/editor-styles.php');
 
 // Custom fields
 require_once(get_template_directory().'/assets/functions/homepage-fields.php');
+require_once(get_template_directory().'/assets/functions/brunch-menu.php');
 
 // Add Custom Settings Pages
 // require_once(get_template_directory().'/assets/functions/sidebar-settings.php');

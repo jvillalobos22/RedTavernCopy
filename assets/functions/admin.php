@@ -67,3 +67,21 @@ function joints_custom_admin_footer() {
 
 // adding it to the admin area
 add_filter('admin_footer_text', 'joints_custom_admin_footer');
+
+// Enqueue Scripts for Admin
+function add_script_to_menu_page()
+{
+    // $pagenow, is a global variable referring to the filename of the current page,
+    // such as ‘admin.php’, ‘post-new.php’
+    // global $pagenow;
+	//
+    // if ($pagenow != 'nav-menus.php') {
+    //     return;
+    // }
+
+    // loading js
+    wp_register_script( 'admin-script', get_template_directory_uri().'/assets/js/admin-script.js', array('jquery-core'), false, true );
+    wp_enqueue_script( 'admin-script' );
+}
+
+add_action( 'admin_enqueue_scripts', 'add_script_to_menu_page' );

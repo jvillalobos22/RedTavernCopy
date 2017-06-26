@@ -52,6 +52,7 @@ $images_directory = get_template_directory_uri().'/assets/images';
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 
 			<div class="off-canvas-content" data-off-canvas-content>
+
                 <div class="dk_hero">
                     <div class="dk_herobar">
                         <div class="dk_leftbox">
@@ -74,3 +75,13 @@ $images_directory = get_template_directory_uri().'/assets/images';
 					 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
 
 				</header> <!-- end .header -->
+                <?php
+                global $post;
+
+                if(!empty($post)) {
+                    $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+                    $post_slug = $post->post_name;
+                }
+                echo '<code>$pageTemplate = '.$pageTemplate.'</code>';
+                echo '<code>$post_slug = '.$post_slug.'</code>';
+                ?>
