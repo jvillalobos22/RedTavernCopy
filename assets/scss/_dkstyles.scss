@@ -404,6 +404,19 @@ hr.dk_redhr {
 
     .dk_menuitems {
         margin-bottom: 4rem;
+
+        strong {
+            display: block;
+            margin-top: 1.5rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        em {
+            display: block;
+        }
     }
 }
 
@@ -430,10 +443,8 @@ hr.dk_redhr {
         &:last-child() {
             padding-bottom: 0;
         }
-        &.active {
-            a {
-                font-weight: bold;
-            }
+        a.active {
+            font-weight: bold;
         }
     }
     a {

@@ -72,11 +72,13 @@ CSS file.
 // Import your print styles
 @import "print";
 
+// Import Animate.css
+@import "animate";
 // Import TrajanPro Font Face
-@font-face {
-  font-family: Trajan Pro;
-  src: url('../fonts/Trajan-Pro-Regular.ttf');
-  font-weight: normal;
-}
+// @font-face {
+//   font-family: Trajan Pro;
+//   src: url('../fonts/Trajan-Pro-Regular.ttf');
+//   font-weight: normal;
+// }
 // Import custom DK Styles
 @import "dkstyles";
