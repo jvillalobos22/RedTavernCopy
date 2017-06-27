@@ -37,12 +37,12 @@ function setActiveLink(menu) {
     var DinnerClicker = document.getElementById('dinnerLink');
     var HappyClicker = document.getElementById('happyLink');
     var WineClicker = document.getElementById('wineLink');
-
+    // Remove any currently set classes.
     BrunchClicker.className = '';
     DinnerClicker.className = '';
     HappyClicker.className = '';
     WineClicker.className = '';
-
+    // Add active class to proper link
     switch(menu) {
         case 'brunch':
             BrunchClicker.className = 'active';
@@ -94,6 +94,7 @@ window.onload = function() {
 }
 
 function populateMenu(menuArr) {
+    // grab the container node
     var menuDisplay = document.getElementById('dkMenuDisplay');
 
     for(var i = 0; i < menuArr.length; i++) {
