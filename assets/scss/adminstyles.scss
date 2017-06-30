@@ -101,6 +101,15 @@
     }
 }
 
+
+.dk_threecol_flex {
+    display: flex;
+    justify-content: space-between;
+
+    .dk_col {
+        width: 33%;
+    }
+}
 /*==================================================
  * Effect 6
  * ===============================================*/
@@ -194,7 +203,7 @@ fieldset {
 
 .dk_optionspage {
     table.form-table {
-        max-width: 800px;
+        max-width: 1200px;
 
         input, textarea {
             width: 100%;
@@ -214,5 +223,15 @@ fieldset {
         input[type='text'] {
             margin-bottom: 0.75rem;
         }
+    }
+
+    input, .dk_imgbtn, .dk-img-preview {
+        max-width: 400px;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    input {
+        padding: 0.5rem;
     }
 }

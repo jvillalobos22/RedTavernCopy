@@ -78,6 +78,7 @@ function add_script_to_menu_page()
     // if ($pagenow != 'nav-menus.php') {
     //     return;
     // }
+	wp_enqueue_media();
 
     // loading js
     wp_register_script( 'admin-script', get_template_directory_uri().'/assets/js/admin-script.js', array('jquery-core'), false, true );

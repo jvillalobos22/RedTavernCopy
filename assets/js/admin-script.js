@@ -30,3 +30,37 @@ jQuery(document).ready(function ($) {
         meta_image_frame.open();
     });
 });
+
+
+jQuery(document).ready(function($){
+
+    var mediaUploader;
+
+    $( '.dk_imgbtn' ).on('click', function (e) {
+        e.preventDefault();
+        var this_img = $(this).parent().children('.dk-img-upload');
+        var preview_img = $(this).parent().children('.dk-img-preview');
+
+        if( mediaUploader ){
+            mediaUploader.open();
+            return;
+        }
+
+        mediaUploader = wp.media.frames.file_frame = wp.media({
+            title: 'Upload/Edit Image',
+            button: {
+                text: 'Choose Image'
+            },
+            multiple: false
+        });
+
+        mediaUploader.on('select', function(){
+            var attachment = mediaUploader.state().get('selection').first().toJSON();
+            this_img.val(attachment.url);
+            preview_img.attr('src', attachment.url);
+        });
+
+        mediaUploader.open();
+
+    });
+});
