@@ -39,29 +39,34 @@ Template Name: Secondary Page
 	<section class="dk_secondary_callouts">
 		<div class="dk_flexcontainer_wide">
 			<div class="dk_callout one">
-				<div class="dk_img">
-					<!-- <img src="<?php //echo $sundayOneImage ?>" alt="<?php //echo $sundayOneAlt ?>"> -->
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/secondary-callouts-one.jpg" alt="addalt">
-				</div>
-				<div class="dk_text">
-					<h2>Reserve Your Table</h2>
-				</div>
+				<a href="<?php echo $calloutOneLink; ?>" title="<?php echo $calloutOneText; ?>">
+					<div class="dk_img">
+						<img src="<?php echo $calloutOneImg ?>" alt="<?php echo $calloutOneImgAlt ?>">
+					</div>
+					<div class="dk_text">
+						<h2><?php echo $calloutOneText; ?></h2>
+					</div>
+				</a>
 			</div>
 			<div class="dk_callout two">
-				<div class="dk_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/secondary-callouts-one.jpg" alt="addalt">
-				</div>
-				<div class="dk_text">
-					<h2>Reserve Your Table</h2>
-				</div>
+				<a href="<?php echo $calloutTwoLink; ?>" title="<?php echo $calloutTwoText; ?>">
+					<div class="dk_img">
+						<img src="<?php echo $calloutTwoImg ?>" alt="<?php echo $calloutTwoImgAlt ?>">
+					</div>
+					<div class="dk_text">
+						<h2><?php echo $calloutTwoText; ?></h2>
+					</div>
+				</a>
 			</div>
 			<div class="dk_callout three">
-				<div class="dk_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/secondary-callouts-one.jpg" alt="addalt">
-				</div>
-				<div class="dk_text">
-					<h2>Reserve Your Table</h2>
-				</div>
+				<a href="<?php echo $calloutThreeImg; ?>" title="<?php echo $calloutThreeText; ?>">
+					<div class="dk_img">
+						<img src="<?php echo $calloutThreeImg ?>" alt="<?php echo $calloutThreeImgAlt ?>">
+					</div>
+					<div class="dk_text">
+						<h2><?php echo $calloutOneText; ?></h2>
+					</div>
+				</a>
 			</div>
 		</div>
 	</section>

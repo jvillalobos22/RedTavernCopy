@@ -35,11 +35,14 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function($){
 
     var mediaUploader;
-
+    var this_img;
+    var preview_img;
+    
     $( '.dk_imgbtn' ).on('click', function (e) {
         e.preventDefault();
-        var this_img = $(this).parent().children('.dk-img-upload');
-        var preview_img = $(this).parent().children('.dk-img-preview');
+        this_img = $(this).parent().children('.dk-img-upload');
+        preview_img = $(this).parent().children('.dk-img-preview');
+        console.log(preview_img);
 
         if( mediaUploader ){
             mediaUploader.open();
@@ -57,7 +60,7 @@ jQuery(document).ready(function($){
         mediaUploader.on('select', function(){
             var attachment = mediaUploader.state().get('selection').first().toJSON();
             this_img.val(attachment.url);
-            preview_img.attr('src', attachment.url);
+            preview_img.attr("src", attachment.url);
         });
 
         mediaUploader.open();

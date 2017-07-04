@@ -69,13 +69,13 @@ function dk_social_media_settings() {
  // Show Fields in Setting Sections
 function dk_secondary_callouts() {
     // Callout One
-    echo '<div class="dk_option_group">';
+    echo '<div class="dk_option_group"><div>';
     echo '<h2>Callout One</h2>';
 
 
 	$secCalloutOneImg = esc_attr( get_option( 'sec_callout_one_image' ) );
-    echo'<img class="dk-img-preview" src="'.$secCalloutOneImg.'" />';
-    echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" id="dk-img-upload-btn" >';
+    echo '<img class="dk-img-preview" src="'.$secCalloutOneImg.'" />';
+    echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >';
     echo '<input type="hidden" class="dk-img-upload" name="sec_callout_one_image" value="'.$secCalloutOneImg.'">';
 
 
@@ -88,16 +88,16 @@ function dk_secondary_callouts() {
 
 	$secCalloutOneLink = esc_attr( get_option( 'sec_callout_one_link' ) );
 	echo '<input type="text" name="sec_callout_one_link" value="'.$secCalloutOneLink.'" placeholder="Callout One Link">';
-    echo '</div>';
+    echo '</div></div>';
 
     // Callout Two
-    echo '<div class="dk_option_group">';
+    echo '<div class="dk_option_group"><div>';
     echo '<h2>Callout Two</h2>';
 
 
 	$secCalloutTwoImg = esc_attr( get_option( 'sec_callout_two_image' ) );
     echo'<img class="dk-img-preview" src="'.$secCalloutTwoImg.'" />';
-    echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" id="dk-img-upload-btn" >';
+    echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >';
     echo '<input type="hidden" class="dk-img-upload" name="sec_callout_two_image" value="'.$secCalloutTwoImg.'">';
 
 
@@ -110,15 +110,16 @@ function dk_secondary_callouts() {
 
 	$secCalloutTwoLink = esc_attr( get_option( 'sec_callout_two_link' ) );
 	echo '<input type="text" name="sec_callout_two_link" value="'.$secCalloutTwoLink.'" placeholder="Callout Two Link">';
-    echo '</div>';
+    echo '</div></div>';
 
     // Callout Three
-    echo '<div class="dk_option_group">';
+    echo '<div class="dk_option_group"><div>';
     echo '<h2>Callout Three</h2>';
+
 	$secCalloutThreeImg = esc_attr( get_option( 'sec_callout_three_image' ) );
     echo'<img class="dk-img-preview" src="'.$secCalloutThreeImg.'" />';
-    echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" id="dk-img-upload-btn" >';
-    echo '<input type="hidden" class="dk-img-upload" name="sec_callout_three_image" value="'.$secCalloutThreeImg.'"';
+    echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >';
+    echo '<input type="hidden" class="dk-img-upload" name="sec_callout_three_image" value="'.$secCalloutThreeImg.'">';
 
     $secCalloutThreeImgAlt = esc_attr( get_option( 'sec_callout_three_image_alt' ) );
     echo '<input type="text" name="sec_callout_three_image_alt" value="'.$secCalloutThreeImgAlt.'" placeholder="Callout Three Image Alt Tag">';
@@ -128,7 +129,7 @@ function dk_secondary_callouts() {
 
 	$secCalloutThreeLink = esc_attr( get_option( 'sec_callout_three_link' ) );
 	echo '<input type="text" name="sec_callout_three_link" value="'.$secCalloutThreeLink.'" placeholder="Callout Three Link">';
-    echo '</div>';
+    echo '</div></div>';
 }
 
 // function dk_social_media_links() {

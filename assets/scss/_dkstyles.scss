@@ -423,6 +423,20 @@ hr.dk_redhr {
     .dk_callout {
         // flex: 1;
         text-align: center;
+        width: 32%;
+
+        a {
+            color: #fff;
+            h2 {
+                margin-top: 0.5rem;
+                font-size: 1.625rem;
+            }
+            &:hover, &:focus, &:active {
+                h2 {
+                    font-weight: bold;
+                }
+            }
+        }
     }
 }
 /*==============================================================================
