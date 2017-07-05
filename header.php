@@ -52,21 +52,37 @@ $images_directory = get_template_directory_uri().'/assets/images';
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 
 			<div class="off-canvas-content" data-off-canvas-content>
+                <?php
+                global $post;
+                // Get Header Fields
+                $secPageHeroImg = esc_attr( get_option( 'secpage_hero_img' ) );
+                $headerPhone = esc_attr( get_option( 'header_phone' ) );
+                $headerPhoneClean = preg_replace("/[^0-9]/","",$headerPhone);
+                $headerAddr = esc_attr( get_option( 'header_address' ) );
 
-                <div class="dk_hero">
+                if(!empty($post)) {
+                    $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+                    $post_slug = $post->post_name;
+                }
+                // echo '<code>$pageTemplate = '.$pageTemplate.'</code>';
+                // echo '<code>$post_slug = '.$post_slug.'</code>';
+                ?>
+                <div class="dk_hero <?php if($pageTemplate == 'template-homepage.php') { ?>dk_homehero<?php } else { ?>dk_sechero<?php } ?>" <?php if($pageTemplate != 'template-homepage.php') { echo 'style="background-image:url('.$secPageHeroImg.');"'; } ?>>
                     <div class="dk_herobar">
                         <div class="dk_leftbox">
                             <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/redtavern-logo.png" alt="<?php bloginfo('name'); ?> Logo"></a>
                         </div><!--
                         --><div class="dk_rightbox">
-                            <span><a href="tel:+15308943463">(530) 894-3463</a>
-                            Located at 1250 Esplanade, Chico CA 95926</span>
+                            <span><a href="tel:+1<?php echo $headerPhoneClean ?>"><?php echo $headerPhone; ?></a>
+                            <?php echo $headerAddr; ?></span>
                         </div>
                     </div>
+                    <?php if($pageTemplate == 'template-homepage.php') { ?>
                     <div class="dk_caption">
                         <h2>Some Heading Can Go Here</h2>
                     </div>
                     <img data-interchange="[<?php echo $images_directory; ?>/homepage-hero-small.jpg, small], [<?php echo $images_directory; ?>/homepage-hero-medium.jpg, medium], [<?php echo $images_directory; ?>/homepage-hero.jpg, large]" alt="Home Page Hero">
+                    <?php } ?>
                 </div>
 				<header class="header" role="banner">
 
@@ -75,13 +91,3 @@ $images_directory = get_template_directory_uri().'/assets/images';
 					 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
 
 				</header> <!-- end .header -->
-                <?php
-                global $post;
-
-                if(!empty($post)) {
-                    $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
-                    $post_slug = $post->post_name;
-                }
-                echo '<code>$pageTemplate = '.$pageTemplate.'</code>';
-                echo '<code>$post_slug = '.$post_slug.'</code>';
-                ?>

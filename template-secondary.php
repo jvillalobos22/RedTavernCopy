@@ -64,7 +64,7 @@ Template Name: Secondary Page
 						<img src="<?php echo $calloutThreeImg ?>" alt="<?php echo $calloutThreeImgAlt ?>">
 					</div>
 					<div class="dk_text">
-						<h2><?php echo $calloutOneText; ?></h2>
+						<h2><?php echo $calloutThreeText; ?></h2>
 					</div>
 				</a>
 			</div>

@@ -161,18 +161,18 @@ hr.dk_redhr {
         color: #fff;
         z-index: 1;
     }
+
+    &.dk_sechero {
+        background-size: cover;
+    }
 }
 
 .dk_herobar {
-    position: absolute;
-    top: 3rem;
-    left: 0;
-    right: 0;
     width: 100%;
     max-width: 1400px;
     display: flex;
     margin: 0 auto;
-    z-index: 1;
+    z-index: 2;
 
     .dk_leftbox, .dk_rightbox {
         flex: 1;
@@ -181,7 +181,7 @@ hr.dk_redhr {
     .dk_leftbox {
         text-align: left;
         padding-left: 0.9375rem;
-        img {
+        a {
             width: 100%;
             max-width: 295px;
             display: inline-block;
@@ -208,6 +208,18 @@ hr.dk_redhr {
             }
         }
     }
+}
+
+.dk_sechero .dk_herobar {
+    position: relative;
+    padding: 3.25rem 0;
+}
+
+.dk_homehero .dk_herobar {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
 }
 
 .dk_topbar {

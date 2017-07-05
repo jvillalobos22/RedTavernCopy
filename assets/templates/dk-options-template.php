@@ -8,6 +8,7 @@
 
     <form method="post" action="options.php">
         <?php settings_fields( 'dk-settings-group' ); ?>
+    
         <?php do_settings_sections( 'dk_settings' ); ?>
         <?php //do_settings_sections( 'dk-social-media-settings' ); ?>
         <?php submit_button(); ?>

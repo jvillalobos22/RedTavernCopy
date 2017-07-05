@@ -29,16 +29,22 @@ add_action( 'admin_menu', 'dk_add_sidebar_page');
 
 function dk_custom_options() {
 	// Register Settings
+	// Header/Hero Fields
+	register_setting( 'dk-settings-group', 'header_phone');
+	register_setting( 'dk-settings-group', 'header_address');
+	register_setting( 'dk-settings-group', 'secpage_hero_img');
+
+	// Callout One
     register_setting( 'dk-settings-group', 'sec_callout_one_image');
     register_setting( 'dk-settings-group', 'sec_callout_one_image_alt');
     register_setting( 'dk-settings-group', 'sec_callout_one_text');
     register_setting( 'dk-settings-group', 'sec_callout_one_link');
-
+	// Callout Two
     register_setting( 'dk-settings-group', 'sec_callout_two_image');
     register_setting( 'dk-settings-group', 'sec_callout_two_image_alt');
     register_setting( 'dk-settings-group', 'sec_callout_two_text');
     register_setting( 'dk-settings-group', 'sec_callout_two_link');
-
+	// Callout Three
     register_setting( 'dk-settings-group', 'sec_callout_three_image');
     register_setting( 'dk-settings-group', 'sec_callout_three_image_alt');
     register_setting( 'dk-settings-group', 'sec_callout_three_text');
@@ -49,15 +55,21 @@ function dk_custom_options() {
     // register_setting( 'dk-settings-group', 'about_link_url');
 
 	// Register Settings Section
+	add_settings_section( 'dk-header-options', 'Edit Header Options', 'dk_header_settings', 'dk_settings');
 	add_settings_section( 'dk-secondary-callouts-options', 'Edit Secondary Page Callouts', 'dk_secondary_callout_settings', 'dk_settings');
 	// add_settings_section( 'dk-social-media-settings', 'Edit Default Sidebar', 'dk_social_media_settings', 'dk_settings');
 
 	// Register Settings Fields
+	add_settings_field( 'header-options', 'Header Options', 'dk_header_settings_fields', 'dk_settings', 'dk-header-options' );
     add_settings_field( 'secondary-callouts', 'Secondary Page Callouts', 'dk_secondary_callouts', 'dk_settings', 'dk-secondary-callouts-options' );
 	// add_settings_field( 'social-media-links', 'Default Sidebar Featured Business', 'dk_social_media_links', 'dk_settings', 'dk-social-media-settings' );
 }
 
  // Add Messages Above Settings
+function dk_header_settings() {
+	echo '<p style="max-width: 800px">Adjust options for the header.</p>';
+}
+
 function dk_secondary_callout_settings() {
 	echo '<p style="max-width: 800px">Edit the callouts that show up at the bottom of secondary pages like the About page or Private Parties page.</p>';
 }
@@ -67,26 +79,44 @@ function dk_social_media_settings() {
 }
 
  // Show Fields in Setting Sections
+function dk_header_settings_fields() {
+	echo '<div class="dk_option_group">';
+	$secPageHeroImg = esc_attr( get_option( 'secpage_hero_img' ) );
+	echo '<label for="secpage_hero_img">Secondary Page Hero Image</label>';
+	echo '<img class="dk-img-preview full" src="'.$secPageHeroImg.'" />';
+    echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >';
+    echo '<input type="hidden" class="dk-img-upload" name="secpage_hero_img" value="'.$secPageHeroImg.'">';
+
+	$headerPhone = esc_attr( get_option( 'header_phone' ) );
+	echo '<label for="header_phone">Phone Number</label>';
+    echo '<input type="text" name="header_phone" value="'.$headerPhone.'" placeholder="ex: (530) 555-5555">';
+
+	$headerAddr = esc_attr( get_option( 'header_address' ) );
+	echo '<label for="header_phone">Address</label>';
+    echo '<input type="text" name="header_address" value="'.$headerAddr.'" placeholder="ex: Located at 1250 Esplanade, Chico CA 95926">';
+	echo '</div>';
+}
+
 function dk_secondary_callouts() {
     // Callout One
     echo '<div class="dk_option_group"><div>';
     echo '<h2>Callout One</h2>';
-
 
 	$secCalloutOneImg = esc_attr( get_option( 'sec_callout_one_image' ) );
     echo '<img class="dk-img-preview" src="'.$secCalloutOneImg.'" />';
     echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >';
     echo '<input type="hidden" class="dk-img-upload" name="sec_callout_one_image" value="'.$secCalloutOneImg.'">';
 
-
-
     $secCalloutOneImgAlt = esc_attr( get_option( 'sec_callout_one_image_alt' ) );
+	echo '<label for"sec_callout_one_image_alt">Image Alt Tag</label>';
     echo '<input type="text" name="sec_callout_one_image_alt" value="'.$secCalloutOneImgAlt.'" placeholder="Callout One Image Alt Tag">';
 
 	$secCalloutOneText = esc_attr( get_option( 'sec_callout_one_text' ) );
+	echo '<label for"sec_callout_one_text">Callout Text</label>';
 	echo '<input type="text" name="sec_callout_one_text" value="'.$secCalloutOneText.'" placeholder="Callout One Text">';
 
 	$secCalloutOneLink = esc_attr( get_option( 'sec_callout_one_link' ) );
+	echo '<label for"sec_callout_one_link">Callout Link</label>';
 	echo '<input type="text" name="sec_callout_one_link" value="'.$secCalloutOneLink.'" placeholder="Callout One Link">';
     echo '</div></div>';
 
@@ -94,21 +124,21 @@ function dk_secondary_callouts() {
     echo '<div class="dk_option_group"><div>';
     echo '<h2>Callout Two</h2>';
 
-
 	$secCalloutTwoImg = esc_attr( get_option( 'sec_callout_two_image' ) );
     echo'<img class="dk-img-preview" src="'.$secCalloutTwoImg.'" />';
     echo '<input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >';
     echo '<input type="hidden" class="dk-img-upload" name="sec_callout_two_image" value="'.$secCalloutTwoImg.'">';
 
-
-
     $secCalloutTwoImgAlt = esc_attr( get_option( 'sec_callout_two_image_alt' ) );
+	echo '<label for"sec_callout_two_image_alt">Image Alt Tag</label>';
     echo '<input type="text" name="sec_callout_two_image_alt" value="'.$secCalloutTwoImgAlt.'" placeholder="Callout Two Image Alt Tag">';
 
 	$secCalloutTwoText = esc_attr( get_option( 'sec_callout_two_text' ) );
+	echo '<label for"sec_callout_two_text">Callout Text</label>';
 	echo '<input type="text" name="sec_callout_two_text" value="'.$secCalloutTwoText.'" placeholder="Callout Two Text">';
 
 	$secCalloutTwoLink = esc_attr( get_option( 'sec_callout_two_link' ) );
+	echo '<label for"sec_callout_two_link">Callout Link</label>';
 	echo '<input type="text" name="sec_callout_two_link" value="'.$secCalloutTwoLink.'" placeholder="Callout Two Link">';
     echo '</div></div>';
 
@@ -122,16 +152,18 @@ function dk_secondary_callouts() {
     echo '<input type="hidden" class="dk-img-upload" name="sec_callout_three_image" value="'.$secCalloutThreeImg.'">';
 
     $secCalloutThreeImgAlt = esc_attr( get_option( 'sec_callout_three_image_alt' ) );
+	echo '<label for"sec_callout_three_image_alt">Image Alt Tag</label>';
     echo '<input type="text" name="sec_callout_three_image_alt" value="'.$secCalloutThreeImgAlt.'" placeholder="Callout Three Image Alt Tag">';
 
 	$secCalloutThreeText = esc_attr( get_option( 'sec_callout_three_text' ) );
+	echo '<label for"sec_callout_three_text">Callout Text</label>';
 	echo '<input type="text" name="sec_callout_three_text" value="'.$secCalloutThreeText.'" placeholder="Callout Three Text">';
 
 	$secCalloutThreeLink = esc_attr( get_option( 'sec_callout_three_link' ) );
+	echo '<label for"sec_callout_three_link">Callout Link</label>';
 	echo '<input type="text" name="sec_callout_three_link" value="'.$secCalloutThreeLink.'" placeholder="Callout Three Link">';
     echo '</div></div>';
 }
-
 // function dk_social_media_links() {
 // 	echo '<div class="dk_checkboxes">';
 // 	// Recent Issue Checkbox

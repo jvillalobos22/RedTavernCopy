@@ -205,6 +205,20 @@ fieldset {
     table.form-table {
         max-width: 1200px;
 
+        th {
+            display: none;
+        }
+        td {
+            padding-top: 0;
+        }
+        label {
+            margin-bottom: 0.375rem;
+            margin-top: 1.25rem;
+            display: block;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
         input, textarea {
             width: 100%;
 
@@ -229,6 +243,10 @@ fieldset {
         max-width: 400px;
         display: block;
         margin-bottom: 0.5rem;
+    }
+
+    .dk-img-preview.full {
+        max-width: 700px;
     }
 
     input {
