@@ -54,16 +54,24 @@ $images_directory = get_template_directory_uri().'/assets/images';
 			<div class="off-canvas-content" data-off-canvas-content>
                 <?php
                 global $post;
-                // Get Header Fields
-                $secPageHeroImg = esc_attr( get_option( 'secpage_hero_img' ) );
-                $headerPhone = esc_attr( get_option( 'header_phone' ) );
-                $headerPhoneClean = preg_replace("/[^0-9]/","",$headerPhone);
-                $headerAddr = esc_attr( get_option( 'header_address' ) );
-
                 if(!empty($post)) {
                     $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
                     $post_slug = $post->post_name;
                 }
+                // Get Header Fields
+                if($pageTemplate == 'template-homepage.php') {
+                    $homeHeaderMeta = get_post_meta( $post->ID, 'homepage', true );
+
+                    $heroImageLg = $homeHeaderMeta['home-hero-image-lg'];
+                    $heroImageMd = $homeHeaderMeta['home-hero-image-md'];
+                    $heroImageSm = $homeHeaderMeta['home-hero-image-sm'];
+                    $homeHeroCaption = $homeHeaderMeta['hero-caption'];
+                }
+
+                $secPageHeroImg = esc_attr( get_option( 'secpage_hero_img' ) );
+                $headerPhone = esc_attr( get_option( 'header_phone' ) );
+                $headerPhoneClean = preg_replace("/[^0-9]/","",$headerPhone);
+                $headerAddr = esc_attr( get_option( 'header_address' ) );
                 // echo '<code>$pageTemplate = '.$pageTemplate.'</code>';
                 // echo '<code>$post_slug = '.$post_slug.'</code>';
                 ?>
@@ -78,10 +86,14 @@ $images_directory = get_template_directory_uri().'/assets/images';
                         </div>
                     </div>
                     <?php if($pageTemplate == 'template-homepage.php') { ?>
-                    <div class="dk_caption">
-                        <h2>Some Heading Can Go Here</h2>
-                    </div>
-                    <img data-interchange="[<?php echo $images_directory; ?>/homepage-hero-small.jpg, small], [<?php echo $images_directory; ?>/homepage-hero-medium.jpg, medium], [<?php echo $images_directory; ?>/homepage-hero.jpg, large]" alt="Home Page Hero">
+                        <div class="dk_caption">
+                            <?php if ($homeHeroCaption) { ?>
+                                <h2><?php echo $homeHeroCaption ?></h2>
+                            <?php } else { ?>
+                                <h2>Please Set a Caption for this heading</h2>
+                            <?php } ?>
+                        </div>
+                        <img data-interchange="[<?php echo $heroImageSm; ?>, small], [<?php echo $heroImageMd; ?>, medium], [<?php echo $heroImageLg; ?>, large]" alt="Home Page Hero">
                     <?php } ?>
                 </div>
 				<header class="header" role="banner">

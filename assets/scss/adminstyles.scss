@@ -248,8 +248,32 @@ fieldset {
     .dk-img-preview.full {
         max-width: 700px;
     }
-
+    .dk-img-preview.md {
+        max-width: 500px;
+    }
+    .dk-img-preview.sm {
+        max-width: 320px;
+    }
     input {
         padding: 0.5rem;
+    }
+}
+
+.dk_homeheroselect {
+    .dk_imgbtn, .dk-img-preview {
+        width: 100%;
+        max-width: 400px;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    .dk-img-preview.full {
+        max-width: 700px;
+    }
+    .dk-img-preview.md {
+        max-width: 500px;
+    }
+
+    .dk-img-preview.sm {
+        max-width: 320px;
     }
 }

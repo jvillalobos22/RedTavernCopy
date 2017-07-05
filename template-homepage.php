@@ -9,7 +9,6 @@ Template Name: Homepage
 <?php if (have_posts()) : while (have_posts()) : the_post();
 	require_once(get_template_directory().'/assets/snippets/get-homepage-fields.php');
 	// echo '<code>$heroCaption = '.$heroCaption.'</code>';
-	// $variable = $homeMeta['field'];
 ?>
 
 <div id="content" class="dk_home">

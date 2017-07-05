@@ -2,8 +2,6 @@
 
 $homeMeta = get_post_meta( $post->ID, 'homepage', true );
 
-$heroCaption = $homeMeta['hero-caption'];
-
 $mainHeading = $homeMeta['homepage-heading'];
 $mainSubheading = $homeMeta['homepage-subheading'];
 $mainImg = $homeMeta['home-maincontent-image'];
