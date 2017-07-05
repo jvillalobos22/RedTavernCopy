@@ -17,7 +17,6 @@
 		    					</nav>
 		    				</div>
 							<div class="large-12 medium-12 columns">
-
 								<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
 								<p>Site by <a href="https://www.dkwebdesign.com" target="_blank" rel="nofollow">DK Web Design</a></p>
 							</div>
@@ -27,5 +26,19 @@
 			</div>  <!-- end .main-content -->
 		</div> <!-- end .off-canvas-wrapper -->
 		<?php wp_footer(); ?>
+		<script src="https://use.fontawesome.com/51a93f0aea.js"></script>
+		<script>
+		jQuery(document).ready(function($) {
+			$('.dk_testimonial_slider').unslider({
+				autoplay: false,
+				delay: 8000,
+				nav: false,
+				arrows: {
+					prev: '<a class="unslider-arrow dk_slider_nav prev"><i class="fa fa-caret-left" aria-hidden="true"></i></a>',
+					next: '<a class="unslider-arrow dk_slider_nav next"><i class="fa fa-caret-right" aria-hidden="true"></i></a>'
+				}
+			});
+		});
+		</script>
 	</body>
 </html> <!-- end page -->

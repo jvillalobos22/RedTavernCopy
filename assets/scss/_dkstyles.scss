@@ -16,6 +16,7 @@
     #Content Area
     #Callout Styles
 	#Homepage
+    #Testimonials Slider
     #Secondary Page Templates
     #Footer
 	#Media Queries
@@ -355,11 +356,15 @@ hr.dk_redhr {
     }
 }
 
+
+/*==============================================================================
+  	#Testimonials Slider
+==============================================================================*/
 .dk_home_testimonials {
     text-align: center;
     color: #fff;
     position: relative;
-    z-index: -2;
+    z-index: 0;
     padding: 3rem 0.9375rem;
     background-position: center;
     background-size: cover;
@@ -372,7 +377,7 @@ hr.dk_redhr {
         top: 0;
         bottom: 0;
         background-color: rgba(0,0,0,0.65);
-        z-index: -1;
+        z-index: 1;
     }
 
     p, span {
@@ -404,7 +409,33 @@ hr.dk_redhr {
             font-weight: normal;
         }
     }
+
+    .unslider {
+        position: relative;
+        z-index: 5;
+
+        .dk_slider_nav {
+            position: absolute;
+            top: 45%;
+            color: #fff;
+            z-index: 100;
+            cursor: pointer;
+            &.next {
+                right: 2rem;
+            }
+
+            &.prev {
+                left: 2rem;
+            }
+
+            i {
+                font-size: 3rem;
+            }
+        }
+    }
 }
+
+
 
 /*==============================================================================
   	#Secondary Pages
@@ -603,6 +634,21 @@ hr.dk_redhr {
             }
             .dk_text {
                 flex: 4;
+            }
+        }
+    }
+    .dk_home_testimonials {
+        p {
+            padding: 0 1.75rem;
+        }
+        .unslider {
+            .dk_slider_nav {
+                &.next {
+                    right: 0rem;
+                }
+                &.prev {
+                    left: 0rem;
+                }
             }
         }
     }
