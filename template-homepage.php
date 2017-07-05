@@ -85,7 +85,7 @@ Template Name: Homepage
 		</div>
 	</section>
 </div> <!-- end #content dk_home -->
-<section class="dk_home_testimonials" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/homepage-testimonial-bg.jpg');">
+<section class="dk_home_testimonials" style="background-image: url('<?php echo $testimonialBgImg ?>');">
 	<div class="row">
 		<?php
 			$args = array(

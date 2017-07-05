@@ -39,3 +39,5 @@ $sundayTwoSubheading = $homeMeta['sunday-right-subheading'];
 $sundayTwoImage = $homeMeta['sunday-right-image'];
 $sundayTwoAlt = $homeMeta['sunday-right-imagealt'];
 $sundayTwoText = $homeMeta['sunday-right-paragraph'];
+
+$testimonialBgImg = $homeMeta['testimonial-bg'];

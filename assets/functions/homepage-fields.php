@@ -54,7 +54,7 @@ function show_homepage_meta_box() {
                 <img class="dk-img-preview full" src="<?php echo $lgImage; ?>">
                 <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
             </div>
-            <!-- homepage[home-hero-image-lg] -->
+            <!-- homepage[home-hero-image-md] -->
             <div class="dk_option_group">
                 <?php $mdImage = $meta['home-hero-image-md']; ?>
                 <label for="homepage[home-hero-image-md]">Medium Hero Image</label><small>Dimensions: 1024x600</small>
@@ -158,6 +158,18 @@ function show_homepage_meta_box() {
                         <textarea name="homepage[sunday-<?php echo $callout; ?>-paragraph]" id="homepage[sunday-<?php echo $callout; ?>-paragraph]" rows="5" cols="30"><?php if ( isset ( $meta['sunday-'.$callout.'-paragraph'] ) ) echo $meta['sunday-'.$callout.'-paragraph']; ?></textarea>
                     </div>
                 <?php } ?>
+        </fieldset>
+
+        <fieldset>
+            <legend>Testimonial Section</legend>
+            <!-- homepage[testimonial-bg] -->
+            <div class="dk_option_group">
+                <?php $testBg = $meta['testimonial-bg']; ?>
+                <label for="homepage[testimonial-bg]">Testimonial Slidger Background Image</label><small>Dimensions: 1600x350</small>
+                <input type="hidden" name="homepage[testimonial-bg]" id="homepage[testimonial-bg]" class="dk-img-upload" value="<?php if ( isset ( $testBg ) ) echo $testBg; ?>">
+                <img class="dk-img-preview full" src="<?php echo $testBg; ?>">
+                <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+            </div>
         </fieldset>
 	</div>
 	<?php
