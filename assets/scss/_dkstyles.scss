@@ -595,6 +595,30 @@ hr.dk_redhr {
     }
 }
 
+.dk_social {
+    a {
+        display: inline-block;
+        margin: 0 0.5rem;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $bgBeige;
+
+        i {
+            color: $bgBeige;
+            font-size: 1.75rem;
+            vertical-align: -17px;
+        }
+
+        &:hover {
+            background-color: $bgBeige;
+
+            i {
+                color: $mainRed;
+            }
+        }
+    }
+}
+
 /*==============================================================================
   	#Media Queries
 ==============================================================================*/

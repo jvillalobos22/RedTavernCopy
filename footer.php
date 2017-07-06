@@ -9,8 +9,39 @@
 					<div id="inner-footer" class="dk_footer_main">
 						<div class="row">
 							<div class="large-12 medium-12 columns">
+								<?php
+									$facebook = esc_attr( get_option( 'social_facebook' ) );
+									$instagram = esc_attr( get_option( 'social_instagram' ) );
+									$twitter = esc_attr( get_option( 'social_twitter' ) );
+									$tripadvisor = esc_attr( get_option( 'social_tripadvisor' ) );
+									$yelp = esc_attr( get_option( 'social_yelp' ) );
+								?>
 								<div class="dk_social">
-									Social Media Links Here
+									<?php if( isset( $facebook ) && $facebook != '') { ?>
+									<a href="<?php echo $facebook; ?>" target="_blank">
+										<i class="fa fa-facebook" aria-hidden="true"></i>
+									</a>
+									<?php } ?>
+									<?php if( isset( $instagram ) && $instagram != '') { ?>
+									<a href="<?php echo $instagram; ?>" target="_blank">
+										<i class="fa fa-instagram" aria-hidden="true"></i>
+									</a>
+									<?php } ?>
+									<?php if( isset( $twitter ) && $twitter != '') { ?>
+									<a href="<?php echo $twitter; ?>" target="_blank">
+										<i class="fa fa-twitter" aria-hidden="true"></i>
+									</a>
+									<?php } ?>
+									<?php if( isset( $tripadvisor ) && $tripadvisor != '') { ?>
+									<a href="<?php echo $tripadvisor; ?>" target="_blank">
+										<i class="fa fa-tripadvisor" aria-hidden="true"></i>
+									</a>
+									<?php } ?>
+									<?php if( isset( $yelp ) && $yelp != '') { ?>
+									<a href="<?php echo $yelp; ?>" target="_blank">
+										<i class="fa fa-yelp" aria-hidden="true"></i>
+									</a>
+									<?php } ?>
 								</div>
 								<nav role="navigation">
 		    						<?php joints_footer_links(); ?>
