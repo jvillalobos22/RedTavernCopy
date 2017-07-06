@@ -230,6 +230,19 @@ hr.dk_redhr {
         text-align: center;
     }
 
+    .dropdown.menu.medium-horizontal > li.opens-right > ul.is-dropdown-submenu {
+        background-color: $mainRed;
+        top: 52px;
+
+        a {
+            font-size: 0.925rem;
+        }
+    }
+
+    .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
+        border-color: #fff transparent transparent;
+    }
+
     .menu li.active a {
         background: none;
         border-bottom: 3px solid #fff;
@@ -252,6 +265,60 @@ hr.dk_redhr {
 
         &:hover {
             font-weight: bold;
+        }
+    }
+}
+/*==============================================================================
+  	#Off Canvas Nav
+==============================================================================*/
+.dk_offcanvas_toggle {
+    i {
+        font-size: 2rem;
+    }
+}
+
+.menu > li > a.dk_offcanvas_toggle {
+    padding: 0.25rem 0.9375rem;
+}
+
+.dk_offcanvas {
+    ul {
+        margin-top: 3rem;
+    }
+    ul.menu.submenu {
+        margin-top: 0;
+        margin-left: 1rem;
+    }
+    a {
+        color: $bgBeige;
+        border-left: 3px solid transparent;
+
+        &:hover, &:focus, &:active {
+            background-color: $darkRed;
+            border-left: 3px solid $bgBeige;
+        }
+    }
+    .is-accordion-submenu-parent > a::after {
+        border-color: #fff transparent transparent;
+    }
+    .menu .active > a {
+        background: none;
+        font-weight: bold;
+        border-left: 3px solid $bgBeige;
+
+        &:hover, &:focus, &:active {
+            background-color: $darkRed;
+            border-left: 3px solid $bgBeige;
+        }
+    }
+    .dk_closebtn {
+        span {
+            color: $bgBeige;
+        }
+        &:hover {
+            span {
+                font-weight: bold;
+            }
         }
     }
 }

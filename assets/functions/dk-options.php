@@ -74,7 +74,7 @@ function dk_custom_options() {
 	add_settings_field( 'social-media-options', 'Accounts', 'dk_social_media_fields', 'social_media_settings', 'dk-social-media-settings' );
 }
 
- // Add Messages Above Settings
+// Add Messages Above Settings
 function dk_header_settings() {
 	// echo '<p style="max-width: 800px">Adjust options for the header.</p>';
 }
@@ -87,7 +87,7 @@ function dk_social_media_settings() {
 	// echo '<p style="max-width: 800px">This controls the links for social media accounts across the site.</p>';
 }
 
- // Show Fields in Setting Sections
+// Show Fields in Setting Sections
 function dk_header_settings_fields() {
 	// Generate Header Options Fields
 	require_once( get_template_directory() . '/assets/snippets/options-fields-header.php' );

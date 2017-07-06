@@ -11,7 +11,7 @@
 	<div class="show-for-small-only">
 		<ul class="menu">
 			<!-- <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
-			<li><a data-toggle="off-canvas"><?php _e( 'Menu', 'jointswp' ); ?></a></li>
+			<li><a class="dk_offcanvas_toggle" data-toggle="off-canvas"><i class="fa fa-bars" aria-hidden="true"></i> <?php //_e( 'Menu', 'jointswp' ); ?></a></li>
 		</ul>
 	</div>
 </div>
