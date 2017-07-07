@@ -32,7 +32,7 @@ function custom_post_events() {
 			'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'These are the events that show up on the events page or on the live music lineup.', 'jointswp' ), /* Custom Type Description */
+			'description' => __( 'These are the events that show up on the events page.', 'jointswp' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => true,

@@ -568,7 +568,7 @@ hr.dk_redhr {
 
 .dk_event {
     display: flex;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     img {
         width: 100%;
         max-width: 340px;
@@ -588,6 +588,36 @@ hr.dk_redhr {
         font-size: 1.125rem;
         margin-bottom: 1rem;
         display: block;
+    }
+
+    .dk_artist_website {
+        display: inline-block;
+        background-color: $mainRed;
+        color: #fff;
+        padding: 3px 12px;
+        text-align: center;
+        margin-right: 0.5rem;
+    }
+
+    .dk_artist_facebook {
+        display: inline-block;
+        vertical-align: top;
+        width: 31px;
+        text-align: center;
+        height: 31px;
+        background-color: $mainRed;
+
+        i {
+            font-size: 1.25rem;
+            color: #fff;
+            vertical-align: -6px;
+        }
+    }
+
+    .dk_artist_facebook, .dk_artist_website {
+        &:hover {
+            background-color: darken($mainRed, 10%);
+        }
     }
 }
 
@@ -829,7 +859,7 @@ hr.dk_redhr {
 
     .dk_event {
         display: block;
-        margin-bottom: 2.5rem;
+
         img, .dk_body {
             display: block;
         }
@@ -843,10 +873,6 @@ hr.dk_redhr {
 
         h3 {
             font-size: 1.475rem;
-        }
-
-        .dk_date {
-
         }
     }
 }

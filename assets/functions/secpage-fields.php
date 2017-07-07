@@ -22,7 +22,7 @@ function add_secpage_meta_box() {
     if(!empty($post)) {
         $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
 
-        if($pageTemplate == 'template-secondary.php' || $pageTemplate == 'template-reservations.php' || $pageTemplate == 'template-events.php') {
+        if($pageTemplate == 'template-secondary.php' || $pageTemplate == 'template-reservations.php' || $pageTemplate == 'template-events.php' || $pageTemplate == 'template-live-music.php') {
             add_meta_box(
         		'secpage_meta_box', // $id
         		'Secondary Page Template Fields', // $title
