@@ -15,10 +15,18 @@ Template Name: Reservations Page
 <div id="content" class="dk_secondary">
 	<section class="dk_main dk_secmain">
 		<div id="inner-content" class="row">
-			<!-- <div class="large-4 medium-5 small-12 columns">
-				<img src="<?php //echo $mainImg; ?>" alt="<?php //echo $mainImgAlt; ?>">
-			</div> -->
-			<main id="main" class="large-12 medium-12 small-12 columns" role="main">
+			<div class="large-4 medium-6 small-12 columns">
+				<div class="dk_reservations">
+					<!-- Start Livebookings Direct Code -->
+					<script type="text/javascript" src="https://secure.livebookings.com/LBDirect/Assets/Scripts/LBDirectDeploy.js"></script>
+					<script type="text/javascript">LBDirect_Embed({
+					 connectionid: "US-RES-THEREDTAVERN_415090:90804",
+					 language: "en-US"
+					});</script>
+					<!-- End Livebookings Direct Code -->
+				</div>
+			</div>
+			<main id="main" class="large-8 medium-6 small-12 columns" role="main">
 				<?php if(isset($mainHeading) && $mainHeading) { ?>
 					<h1><?php echo $mainHeading; ?></h1>
 				<?php } else { ?>
@@ -29,15 +37,6 @@ Template Name: Reservations Page
 				<?php } ?>
 				<div class="dk_maincontent">
 					<?php the_content() ?>
-				</div>
-				<div class="dk_reservations">
-					<!-- Start Livebookings Direct Code -->
-					<script type="text/javascript" src="https://secure.livebookings.com/LBDirect/Assets/Scripts/LBDirectDeploy.js"></script>
-					<script type="text/javascript">LBDirect_Embed({
-					 connectionid: "US-RES-THEREDTAVERN_415090:90804",
-					 language: "en-US"
-					});</script>
-					<!-- End Livebookings Direct Code -->
 				</div>
 				<div class="dk_clearfix">
 			</main> <!-- end #main -->

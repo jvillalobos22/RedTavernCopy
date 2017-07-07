@@ -19,6 +19,7 @@
     #Testimonials Slider
     #Secondary Pages
     #Events Pages
+    #Contact Page
     #Footer
 	#Media Queries
 ==============================================================================*/
@@ -682,6 +683,35 @@ hr.dk_redhr {
         padding-left: 0;
         color: $darkRed;
         font-size: 1.325rem;
+    }
+}
+
+
+/*==============================================================================
+  	#Contact Page
+==============================================================================*/
+.dk_contactpage {
+    .dk_maincontent {
+        margin-top: 0;
+    }
+    .dk_contactinfo {
+        margin-bottom: 1.5rem;
+        ul {
+            list-style: none;
+            margin-left: 0;
+        }
+    }
+    .dk_submit_btn {
+        border: none;
+        background-color: $mainRed;
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        font-family: $body-font-family;
+
+        &:hover, &:focus, &:active {
+            cursor: pointer;
+            background-color: darken($mainRed, 10%);
+        }
     }
 }
 /*==============================================================================
