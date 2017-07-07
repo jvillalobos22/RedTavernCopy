@@ -46,6 +46,7 @@ require_once(get_template_directory().'/assets/functions/dinner-menu.php');
 require_once(get_template_directory().'/assets/functions/happy-hour-menu.php');
 require_once(get_template_directory().'/assets/functions/wine-list.php');
 require_once(get_template_directory().'/assets/functions/testimonials.php');
+require_once(get_template_directory().'/assets/functions/events.php');
 
 // Add Custom Settings Pages
 require_once(get_template_directory().'/assets/functions/dk-options.php');

@@ -17,7 +17,8 @@
     #Callout Styles
 	#Homepage
     #Testimonials Slider
-    #Secondary Page Templates
+    #Secondary Pages
+    #Events Pages
     #Footer
 	#Media Queries
 ==============================================================================*/
@@ -549,6 +550,47 @@ hr.dk_redhr {
         }
     }
 }
+
+/*==============================================================================
+  	#Events Pages
+==============================================================================*/
+.dk_eventspage {
+    .dk_hr_rooster {
+        margin-bottom: 2.5rem;
+    }
+}
+.dk_events_calendar {
+    ul {
+        list-style: none;
+        margin-left: 0;
+    }
+}
+
+.dk_event {
+    display: flex;
+    margin-bottom: 2.5rem;
+    img {
+        width: 100%;
+        max-width: 340px;
+        margin-bottom: auto;
+    }
+    .dk_body {
+        flex: 4;
+        padding-left: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        margin-bottom: 0;
+    }
+
+    .dk_date {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+}
+
 /*==============================================================================
   	#Menu Pages
 ==============================================================================*/
@@ -782,6 +824,29 @@ hr.dk_redhr {
             .dk_bottom {
                 position: relative;
             }
+        }
+    }
+
+    .dk_event {
+        display: block;
+        margin-bottom: 2.5rem;
+        img, .dk_body {
+            display: block;
+        }
+        img {
+            margin-bottom: 1rem;
+            max-width: 380px;
+        }
+        .dk_body {
+            padding-left: 0;
+        }
+
+        h3 {
+            font-size: 1.475rem;
+        }
+
+        .dk_date {
+
         }
     }
 }
