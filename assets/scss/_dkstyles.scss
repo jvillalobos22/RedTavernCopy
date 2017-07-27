@@ -18,6 +18,7 @@
 	#Homepage
     #Testimonials Slider
     #Secondary Pages
+    #Gift Certificates Page
     #Events Pages
     #Contact Page
     #Footer
@@ -551,7 +552,12 @@ hr.dk_redhr {
         }
     }
 }
-
+/*==============================================================================
+  	#Gift Certificates Page
+==============================================================================*/
+.dk_giftcerts {
+    padding-bottom: 2rem;
+}
 /*==============================================================================
   	#Events Pages
 ==============================================================================*/
@@ -719,31 +725,54 @@ hr.dk_redhr {
 ==============================================================================*/
 .dk_footer_cta {
     background-color: $bgBeige;
+    padding: 1.5rem 0;
 
+    #success_message {
+        h4 {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
     .dk_flexcontainer_wide {
         justify-content: center;
         align-items: center;
+        padding: 0;
 
         h4 {
             font-family: $header-font-family;
         }
+
+        p {
+            margin-bottom: 0;
+        }
         input {
             width: 320px;
             margin: 0 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.7rem;
         }
 
-        a {
-            padding: 0.5rem;
+        button[type="submit"] {
+            padding: 0.75rem;
             background-color: $mainRed;
             color: #fff;
             font-family: $trajan;
-            margin-bottom: 1rem;
+            margin-bottom: 0.7rem;
+            cursor: pointer;
 
             &:hover {
                 background-color: darken($mainRed, 10%);
             }
         }
+    }
+
+    .ctct-form-footer {
+        font-size: 0.625rem;
+        display: block;
+        width: 95%;
+        max-width: 1000px;
+        margin: 1rem auto 0 auto;
+        text-align: center;
     }
 }
 

@@ -19,7 +19,9 @@ Template Name: Secondary Page
 				<img src="<?php //echo $mainImg; ?>" alt="<?php //echo $mainImgAlt; ?>">
 			</div> -->
 			<main id="main" class="large-12 medium-12 small-12 columns" role="main">
+				<?php if($mainImg) { ?>
 				<img class="dk_floatimg" src="<?php echo $mainImg; ?>" alt="<?php echo $mainImgAlt; ?>">
+				<?php } ?>
 				<?php if(isset($mainHeading) && $mainHeading) { ?>
 					<h1><?php echo $mainHeading; ?></h1>
 				<?php } else { ?>
