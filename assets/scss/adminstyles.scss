@@ -205,6 +205,20 @@ fieldset {
     table.form-table {
         max-width: 1200px;
 
+        th {
+            display: none;
+        }
+        td {
+            padding-top: 0;
+        }
+        label {
+            margin-bottom: 0.375rem;
+            margin-top: 1.25rem;
+            display: block;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
         input, textarea {
             width: 100%;
 
@@ -231,7 +245,35 @@ fieldset {
         margin-bottom: 0.5rem;
     }
 
+    .dk-img-preview.full {
+        max-width: 700px;
+    }
+    .dk-img-preview.md {
+        max-width: 500px;
+    }
+    .dk-img-preview.sm {
+        max-width: 320px;
+    }
     input {
         padding: 0.5rem;
+    }
+}
+
+.dk_option_group {
+    .dk_imgbtn, .dk-img-preview {
+        width: 100%;
+        max-width: 400px;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    .dk-img-preview.full {
+        max-width: 700px;
+    }
+    .dk-img-preview.md {
+        max-width: 500px;
+    }
+
+    .dk-img-preview.sm {
+        max-width: 320px;
     }
 }

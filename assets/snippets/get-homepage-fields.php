@@ -2,8 +2,6 @@
 
 $homeMeta = get_post_meta( $post->ID, 'homepage', true );
 
-$heroCaption = $homeMeta['hero-caption'];
-
 $mainHeading = $homeMeta['homepage-heading'];
 $mainSubheading = $homeMeta['homepage-subheading'];
 $mainImg = $homeMeta['home-maincontent-image'];
@@ -41,3 +39,5 @@ $sundayTwoSubheading = $homeMeta['sunday-right-subheading'];
 $sundayTwoImage = $homeMeta['sunday-right-image'];
 $sundayTwoAlt = $homeMeta['sunday-right-imagealt'];
 $sundayTwoText = $homeMeta['sunday-right-paragraph'];
+
+$testimonialBgImg = $homeMeta['testimonial-bg'];

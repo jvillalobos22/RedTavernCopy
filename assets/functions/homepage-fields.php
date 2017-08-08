@@ -44,8 +44,32 @@ function show_homepage_meta_box() {
 
 		<!-- All fields will go here -->
         <p>To change the main text below the headings on the homepage, just use the page editor above. Everything else on the page can be changed using the settings below.</p>
-        <fieldset>
+        <fieldset class="dk_homeheroselect">
             <legend>Homepage Hero</legend>
+            <!-- homepage[home-hero-image-lg] -->
+            <div class="dk_option_group">
+                <?php $lgImage = $meta['home-hero-image-lg']; ?>
+                <label for="homepage[home-hero-image-lg]">Large Hero Image</label><small>Dimensions: 1600x650</small>
+                <input type="hidden" name="homepage[home-hero-image-lg]" id="homepage[home-hero-image-lg]" class="dk-img-upload" value="<?php if ( isset ( $lgImage ) ) echo $lgImage; ?>">
+                <img class="dk-img-preview full" src="<?php echo $lgImage; ?>">
+                <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+            </div>
+            <!-- homepage[home-hero-image-md] -->
+            <div class="dk_option_group">
+                <?php $mdImage = $meta['home-hero-image-md']; ?>
+                <label for="homepage[home-hero-image-md]">Medium Hero Image</label><small>Dimensions: 1024x600</small>
+                <input type="hidden" name="homepage[home-hero-image-md]" id="homepage[home-hero-image-md]" class="dk-img-upload" value="<?php if ( isset ( $mdImage ) ) echo $mdImage; ?>">
+                <img class="dk-img-preview md" src="<?php echo $mdImage; ?>">
+                <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+            </div>
+            <!-- homepage[home-hero-image-sm] -->
+            <div class="dk_option_group">
+                <?php $smImage = $meta['home-hero-image-sm']; ?>
+                <label for="homepage[home-hero-image-sm]">Small Hero Image</label><small>Dimensions: 700x500</small>
+                <input type="hidden" name="homepage[home-hero-image-sm]" id="homepage[home-hero-image-sm]" class="dk-img-upload" value="<?php if ( isset ( $smImage ) ) echo $smImage; ?>">
+                <img class="dk-img-preview sm" src="<?php echo $smImage; ?>">
+                <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+            </div>
             <!-- homepage[hero-caption] -->
             <label for="homepage[hero-caption]">Hero Caption</label>
             <input type="text" name="homepage[hero-caption]" id="homepage[hero-caption]" class="dk_full " value="<?php if ( isset ( $meta['hero-caption'] ) ) echo $meta['hero-caption']; ?>">
@@ -134,6 +158,18 @@ function show_homepage_meta_box() {
                         <textarea name="homepage[sunday-<?php echo $callout; ?>-paragraph]" id="homepage[sunday-<?php echo $callout; ?>-paragraph]" rows="5" cols="30"><?php if ( isset ( $meta['sunday-'.$callout.'-paragraph'] ) ) echo $meta['sunday-'.$callout.'-paragraph']; ?></textarea>
                     </div>
                 <?php } ?>
+        </fieldset>
+
+        <fieldset>
+            <legend>Testimonial Section</legend>
+            <!-- homepage[testimonial-bg] -->
+            <div class="dk_option_group">
+                <?php $testBg = $meta['testimonial-bg']; ?>
+                <label for="homepage[testimonial-bg]">Testimonial Slidger Background Image</label><small>Dimensions: 1600x350</small>
+                <input type="hidden" name="homepage[testimonial-bg]" id="homepage[testimonial-bg]" class="dk-img-upload" value="<?php if ( isset ( $testBg ) ) echo $testBg; ?>">
+                <img class="dk-img-preview full" src="<?php echo $testBg; ?>">
+                <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+            </div>
         </fieldset>
 	</div>
 	<?php

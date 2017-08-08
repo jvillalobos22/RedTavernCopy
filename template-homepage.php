@@ -9,7 +9,6 @@ Template Name: Homepage
 <?php if (have_posts()) : while (have_posts()) : the_post();
 	require_once(get_template_directory().'/assets/snippets/get-homepage-fields.php');
 	// echo '<code>$heroCaption = '.$heroCaption.'</code>';
-	// $variable = $homeMeta['field'];
 ?>
 
 <div id="content" class="dk_home">
@@ -102,13 +101,38 @@ Template Name: Homepage
 			</div>
 		</div>
 	</section>
-	<section class="dk_home_testimonials" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/homepage-testimonial-bg.jpg');">
-		<p>&ldquo;I love coming here. The owners are always available and friendly, they seem to really care about the fact that you came to their establishment to eat. Great wine selection and I love love love the cheese platter. It changes depending on what's available locally which I appreciate. The servers are friendly and chatty as well. Very inviting!&rdquo;</p>
-		<span class="dk_reviewer">Danielle V.</span>
-		<span class="dk_review_source">Submitted via Yelp</span>
-	</section>
-
 </div> <!-- end #content dk_home -->
+<section class="dk_home_testimonials" style="background-image: url('<?php echo $testimonialBgImg ?>');">
+	<div class="row">
+		<?php
+			$args = array(
+				'post_type' => 'testimonial',
+				'orderby' => 'title',
+				'order' => 'ASC',
+				'posts_per_page' => -1
+			);
+
+			$testimonials = new WP_Query( $args );
+
+			if ( $testimonials->have_posts() ) :
+		?>
+		<div class="dk_testimonial_slider">
+			<ul>
+				<?php while ( $testimonials->have_posts() ) : $testimonials->the_post();
+
+					$testmeta = get_post_meta( $post->ID, 'testimonial', true );
+				?>
+				<li class="dk_testimonial">
+					<p>&ldquo;<?php echo $testmeta['testimonial-quote']; ?>&rdquo;</p>
+					<span class="dk_reviewer"><?php echo $testmeta['testimonial-name']; ?></span>
+					<span class="dk_review_source">Submitted via <?php echo $testmeta['testimonial-source']; ?></span>
+				</li>
+				<?php endwhile; ?>
+			</ul>
+		</div>
+		<?php endif; ?>
+	</div>
+</section>
 
 <?php endwhile; endif; ?>
 <?php get_footer(); ?>

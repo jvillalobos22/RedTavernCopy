@@ -39,10 +39,15 @@ require_once(get_template_directory().'/assets/functions/editor-styles.php');
 // Custom fields
 require_once(get_template_directory().'/assets/functions/homepage-fields.php');
 require_once(get_template_directory().'/assets/functions/secpage-fields.php');
+
+// Custom Post Types
 require_once(get_template_directory().'/assets/functions/brunch-menu.php');
 require_once(get_template_directory().'/assets/functions/dinner-menu.php');
 require_once(get_template_directory().'/assets/functions/happy-hour-menu.php');
 require_once(get_template_directory().'/assets/functions/wine-list.php');
+require_once(get_template_directory().'/assets/functions/testimonials.php');
+require_once(get_template_directory().'/assets/functions/events.php');
+require_once(get_template_directory().'/assets/functions/live-music.php');
 
 // Add Custom Settings Pages
 require_once(get_template_directory().'/assets/functions/dk-options.php');

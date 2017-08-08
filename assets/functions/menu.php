@@ -3,8 +3,7 @@
 register_nav_menus(
 	array(
 		'main-nav' => __( 'The Main Menu', 'jointswp' ),   // Main nav in header
-		'footer-links' => __( 'Footer Links', 'jointswp' ), // Secondary nav in footer
-		'menu-nav' => __( 'Food Menu Nav', 'jointswp' ) // Nav that shows on menu pages
+		'footer-links' => __( 'Footer Links', 'jointswp' ) // Secondary nav in footer
 	)
 );
 
@@ -62,16 +61,16 @@ function joints_footer_links() {
 } /* End Footer Menu */
 
 // The Food Menu Nav
-function joints_foodmenu_links() {
-    wp_nav_menu(array(
-    	'container' => 'false',                         // Remove nav container
-    	'menu' => __( 'Food Menu Nav', 'jointswp' ),   	// Nav name
-    	'menu_class' => 'foodmenu',      					// Adding custom nav class
-    	'theme_location' => 'menu-nav',             // Where it's located in the theme
-        'depth' => 1,                                   // Limit the depth of the nav
-    	'fallback_cb' => ''  							// Fallback function
-	));
-} /* End Food Menu Nav */
+// function joints_foodmenu_links() {
+//     wp_nav_menu(array(
+//     	'container' => 'false',                         // Remove nav container
+//     	'menu' => __( 'Food Menu Nav', 'jointswp' ),   	// Nav name
+//     	'menu_class' => 'foodmenu',      					// Adding custom nav class
+//     	'theme_location' => 'menu-nav',             // Where it's located in the theme
+//         'depth' => 1,                                   // Limit the depth of the nav
+//     	'fallback_cb' => ''  							// Fallback function
+// 	));
+// } /* End Food Menu Nav */
 
 // Header Fallback Menu
 function joints_main_nav_fallback() {

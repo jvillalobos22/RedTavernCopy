@@ -18,6 +18,9 @@ var createClickHandler = function(arr, menu) {
         setTimeout(populateMenu(arr), 6000);
         // set new active link
         setActiveLink(menu);
+        // Update params
+        //setGetParameter('currentmenu', menu);
+        history.pushState(null, null, '/~newredtavern/menus/?currentmenu='+menu);
     };
 }
 
@@ -86,11 +89,31 @@ window.onload = function() {
     HappyClicker.onclick = createClickHandler(happyArry, 'happyhour');
     WineClicker.onclick = createClickHandler(wineArry, 'wine');
 
-    // Populate Initial Menu
-    populateMenu(brunchArry);
-
-    // Set Active Link
-    setActiveLink('brunch');
+    // Populate Initial Menu and Set Active Link
+    // Get Params,
+    var menuParam = getUrlParameter('currentmenu');
+    // Set Initial Menu
+    switch (menuParam) {
+        case 'brunch':
+            populateMenu(brunchArry);
+            setActiveLink('brunch');
+            break;
+        case 'dinner':
+            populateMenu(dinnerArry);
+            setActiveLink('dinner');
+            break;
+        case 'happyhour':
+            populateMenu(happyArry);
+            setActiveLink('happyhour');
+            break;
+        case 'wine':
+            populateMenu(wineArry);
+            setActiveLink('wine');
+            break;
+        default:
+            populateMenu(brunchArry);
+            setActiveLink('brunch');
+    }
 }
 
 function populateMenu(menuArr) {
@@ -118,3 +141,11 @@ function populateMenu(menuArr) {
         menuDisplay.appendChild(menuSection);
     }
 }
+
+// Helper Function to get URL params
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};

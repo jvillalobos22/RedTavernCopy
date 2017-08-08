@@ -21,8 +21,8 @@ function add_secpage_meta_box() {
 
     if(!empty($post)) {
         $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
-
-        if($pageTemplate == 'template-secondary.php' ) {
+        //if($pageTemplate == 'template-secondary.php' || $pageTemplate == 'template-reservations.php' || $pageTemplate == 'template-events.php' || $pageTemplate == 'template-live-music.php' || $pageTemplate == 'page.php') {
+        if($pageTemplate != 'template-homepage.php') {
             add_meta_box(
         		'secpage_meta_box', // $id
         		'Secondary Page Template Fields', // $title
@@ -49,15 +49,54 @@ function show_secpage_meta_box() {
         <label for="secpage[secpage-subheading]">Page Subheading</label>
         <input type="text" name="secpage[secpage-subheading]" id="secpage[secpage-subheading]" class="dk_full " value="<?php if ( isset ( $meta['secpage-subheading'] ) ) echo $meta['secpage-subheading']; ?>">
         <!-- secpage[secpage-maincontent-image] -->
-        <label for="secpage[secpage-maincontent-image]">Image Upload</label><small>Hint: You won't see the new image below until you click update</small>
-        <input type="text" name="secpage[secpage-maincontent-image]" id="secpage[secpage-maincontent-image]" class="meta-image " value="<?php if ( isset ( $meta['secpage-maincontent-image'] ) ) echo $meta['secpage-maincontent-image']; ?>">
-        <input type="button" class="button image-upload" value="Browse">
-        <?php if ( isset ( $meta['secpage-maincontent-image'] ) ) { ?>
-        <div class="image-preview"><img src="<?php echo $meta['secpage-maincontent-image']; ?>"></div>
+        <?php
+            $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+            if($pageTemplate == 'template-secondary.php' ) {
+        ?>
+            <label for="secpage[secpage-maincontent-image]">Image Upload</label><small>Hint: You won't see the new image below until you click update</small>
+            <input type="text" name="secpage[secpage-maincontent-image]" id="secpage[secpage-maincontent-image]" class="meta-image " value="<?php if ( isset ( $meta['secpage-maincontent-image'] ) ) echo $meta['secpage-maincontent-image']; ?>">
+            <input type="button" class="button image-upload" value="Browse">
+            <?php if ( isset ( $meta['secpage-maincontent-image'] ) ) { ?>
+            <div class="image-preview"><img src="<?php echo $meta['secpage-maincontent-image']; ?>"></div>
+            <?php } ?>
+            <!-- secpage[secpage-maincontent-image-alt] -->
+            <label for="secpage[secpage-maincontent-image-alt]">Image Alt Tag</label><small>Provide a brief description of the image. This is important for accesibility and SEO purposes.</small>
+            <input type="text" name="secpage[secpage-maincontent-image-alt]" id="secpage[secpage-maincontent-image-alt]" class="" value="<?php if ( isset ( $meta['secpage-maincontent-image-alt'] ) ) echo $meta['secpage-maincontent-image-alt']; ?>">
         <?php } ?>
-        <!-- secpage[secpage-maincontent-image-alt] -->
-        <label for="secpage[secpage-maincontent-image-alt]">Image Alt Tag</label><small>Provide a brief description of the image. This is important for accesibility and SEO purposes.</small>
-        <input type="text" name="secpage[secpage-maincontent-image-alt]" id="secpage[secpage-maincontent-image-alt]" class="" value="<?php if ( isset ( $meta['secpage-maincontent-image-alt'] ) ) echo $meta['secpage-maincontent-image-alt']; ?>">
+        <?php if($pageTemplate == 'template-contact.php' ) { ?>
+            <fieldset>
+            <legend>Contact Details</legend>
+                <label for="secpage[contact-phone]">Contact Phone Number</label>
+                <input type="text" name="secpage[contact-phone]" id="secpage[contact-phone]" class="" value="<?php if ( isset ( $meta['contact-phone'] ) ) echo $meta['contact-phone']; ?>">
+
+                <label for="secpage[contact-address]">Contact Address</label>
+                <input type="text" name="secpage[contact-address]" id="secpage[contact-address]" class="" value="<?php if ( isset ( $meta['contact-address'] ) ) echo $meta['contact-address']; ?>">
+            </fieldset>
+            <fieldset>
+                <legend>Hours</legend>
+                <!-- Monday -->
+                <label for="secpage[hours-monday]">Monday Hours</label>
+                <input type="text" name="secpage[hours-monday]" id="secpage[hours-monday]" class="" value="<?php if ( isset ( $meta['hours-monday'] ) ) echo $meta['hours-monday']; ?>">
+                <!-- Tuesday -->
+                <label for="secpage[hours-tuesday]">Tuesday Hours</label>
+                <input type="text" name="secpage[hours-tuesday]" id="secpage[hours-tuesday]" class="" value="<?php if ( isset ( $meta['hours-tuesday'] ) ) echo $meta['hours-tuesday']; ?>">
+                <!-- Wednesday -->
+                <label for="secpage[hours-wednesday]">Wednesday Hours</label>
+                <input type="text" name="secpage[hours-wednesday]" id="secpage[hours-wednesday]" class="" value="<?php if ( isset ( $meta['hours-wednesday'] ) ) echo $meta['hours-wednesday']; ?>">
+                <!-- Thursday -->
+                <label for="secpage[hours-thursday]">Thursday Hours</label>
+                <input type="text" name="secpage[hours-thursday]" id="secpage[hours-thursday]" class="" value="<?php if ( isset ( $meta['hours-thursday'] ) ) echo $meta['hours-thursday']; ?>">
+                <!-- Friday -->
+                <label for="secpage[hours-friday]">Friday Hours</label>
+                <input type="text" name="secpage[hours-friday]" id="secpage[hours-friday]" class="" value="<?php if ( isset ( $meta['hours-friday'] ) ) echo $meta['hours-friday']; ?>">
+                <!-- Saturday -->
+                <label for="secpage[hours-saturday]">Saturday Hours</label>
+                <input type="text" name="secpage[hours-saturday]" id="secpage[hours-saturday]" class="" value="<?php if ( isset ( $meta['hours-saturday'] ) ) echo $meta['hours-saturday']; ?>">
+                <!-- Sunday -->
+                <label for="secpage[hours-sunday]">Sunday Hours</label>
+                <input type="text" name="secpage[hours-sunday]" id="secpage[hours-sunday]" class="" value="<?php if ( isset ( $meta['hours-sunday'] ) ) echo $meta['hours-sunday']; ?>">
+            </fieldset>
+        <?php } ?>
 	</div>
 	<?php
 }

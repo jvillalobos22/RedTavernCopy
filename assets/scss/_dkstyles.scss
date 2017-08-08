@@ -16,7 +16,11 @@
     #Content Area
     #Callout Styles
 	#Homepage
-    #Secondary Page Templates
+    #Testimonials Slider
+    #Secondary Pages
+    #Gift Certificates Page
+    #Events Pages
+    #Contact Page
     #Footer
 	#Media Queries
 ==============================================================================*/
@@ -161,18 +165,18 @@ hr.dk_redhr {
         color: #fff;
         z-index: 1;
     }
+
+    &.dk_sechero {
+        background-size: cover;
+    }
 }
 
 .dk_herobar {
-    position: absolute;
-    top: 3rem;
-    left: 0;
-    right: 0;
     width: 100%;
     max-width: 1400px;
     display: flex;
     margin: 0 auto;
-    z-index: 1;
+    z-index: 2;
 
     .dk_leftbox, .dk_rightbox {
         flex: 1;
@@ -181,7 +185,7 @@ hr.dk_redhr {
     .dk_leftbox {
         text-align: left;
         padding-left: 0.9375rem;
-        img {
+        a {
             width: 100%;
             max-width: 295px;
             display: inline-block;
@@ -210,11 +214,36 @@ hr.dk_redhr {
     }
 }
 
+.dk_sechero .dk_herobar {
+    position: relative;
+    padding: 3.25rem 0;
+}
+
+.dk_homehero .dk_herobar {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+}
+
 .dk_topbar {
     background: linear-gradient(#b90e2a, #7e1222);
 
     ul {
         text-align: center;
+    }
+
+    .dropdown.menu.medium-horizontal > li.opens-right > ul.is-dropdown-submenu {
+        background-color: $mainRed;
+        top: 52px;
+
+        a {
+            font-size: 0.925rem;
+        }
+    }
+
+    .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
+        border-color: #fff transparent transparent;
     }
 
     .menu li.active a {
@@ -239,6 +268,60 @@ hr.dk_redhr {
 
         &:hover {
             font-weight: bold;
+        }
+    }
+}
+/*==============================================================================
+  	#Off Canvas Nav
+==============================================================================*/
+.dk_offcanvas_toggle {
+    i {
+        font-size: 2rem;
+    }
+}
+
+.menu > li > a.dk_offcanvas_toggle {
+    padding: 0.25rem 0.9375rem;
+}
+
+.dk_offcanvas {
+    ul {
+        margin-top: 3rem;
+    }
+    ul.menu.submenu {
+        margin-top: 0;
+        margin-left: 1rem;
+    }
+    a {
+        color: $bgBeige;
+        border-left: 3px solid transparent;
+
+        &:hover, &:focus, &:active {
+            background-color: $darkRed;
+            border-left: 3px solid $bgBeige;
+        }
+    }
+    .is-accordion-submenu-parent > a::after {
+        border-color: #fff transparent transparent;
+    }
+    .menu .active > a {
+        background: none;
+        font-weight: bold;
+        border-left: 3px solid $bgBeige;
+
+        &:hover, &:focus, &:active {
+            background-color: $darkRed;
+            border-left: 3px solid $bgBeige;
+        }
+    }
+    .dk_closebtn {
+        span {
+            color: $bgBeige;
+        }
+        &:hover {
+            span {
+                font-weight: bold;
+            }
         }
     }
 }
@@ -343,11 +426,15 @@ hr.dk_redhr {
     }
 }
 
+
+/*==============================================================================
+  	#Testimonials Slider
+==============================================================================*/
 .dk_home_testimonials {
     text-align: center;
     color: #fff;
     position: relative;
-    z-index: -2;
+    z-index: 0;
     padding: 3rem 0.9375rem;
     background-position: center;
     background-size: cover;
@@ -360,7 +447,7 @@ hr.dk_redhr {
         top: 0;
         bottom: 0;
         background-color: rgba(0,0,0,0.65);
-        z-index: -1;
+        z-index: 1;
     }
 
     p, span {
@@ -392,7 +479,33 @@ hr.dk_redhr {
             font-weight: normal;
         }
     }
+
+    .unslider {
+        position: relative;
+        z-index: 5;
+
+        .dk_slider_nav {
+            position: absolute;
+            top: 45%;
+            color: #fff;
+            z-index: 100;
+            cursor: pointer;
+            &.next {
+                right: 2rem;
+            }
+
+            &.prev {
+                left: 2rem;
+            }
+
+            i {
+                font-size: 3rem;
+            }
+        }
+    }
 }
+
+
 
 /*==============================================================================
   	#Secondary Pages
@@ -439,6 +552,82 @@ hr.dk_redhr {
         }
     }
 }
+/*==============================================================================
+  	#Gift Certificates Page
+==============================================================================*/
+.dk_giftcerts {
+    padding-bottom: 2rem;
+}
+/*==============================================================================
+  	#Events Pages
+==============================================================================*/
+.dk_eventspage {
+    .dk_hr_rooster {
+        margin-bottom: 2.5rem;
+    }
+}
+.dk_events_calendar {
+    ul {
+        list-style: none;
+        margin-left: 0;
+    }
+}
+
+.dk_event {
+    display: flex;
+    margin-bottom: 3rem;
+    img {
+        width: 100%;
+        max-width: 340px;
+        margin-bottom: auto;
+    }
+    .dk_body {
+        flex: 4;
+        padding-left: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        margin-bottom: 0;
+    }
+
+    .dk_date {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .dk_artist_website {
+        display: inline-block;
+        background-color: $mainRed;
+        color: #fff;
+        padding: 3px 12px;
+        text-align: center;
+        margin-right: 0.5rem;
+    }
+
+    .dk_artist_facebook {
+        display: inline-block;
+        vertical-align: top;
+        width: 31px;
+        text-align: center;
+        height: 31px;
+        background-color: $mainRed;
+
+        i {
+            font-size: 1.25rem;
+            color: #fff;
+            vertical-align: -6px;
+        }
+    }
+
+    .dk_artist_facebook, .dk_artist_website {
+        &:hover {
+            background-color: darken($mainRed, 10%);
+        }
+    }
+}
+
 /*==============================================================================
   	#Menu Pages
 ==============================================================================*/
@@ -502,36 +691,88 @@ hr.dk_redhr {
         font-size: 1.325rem;
     }
 }
+
+
+/*==============================================================================
+  	#Contact Page
+==============================================================================*/
+.dk_contactpage {
+    .dk_maincontent {
+        margin-top: 0;
+    }
+    .dk_contactinfo {
+        margin-bottom: 1.5rem;
+        ul {
+            list-style: none;
+            margin-left: 0;
+        }
+    }
+    .dk_submit_btn {
+        border: none;
+        background-color: $mainRed;
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        font-family: $body-font-family;
+
+        &:hover, &:focus, &:active {
+            cursor: pointer;
+            background-color: darken($mainRed, 10%);
+        }
+    }
+}
 /*==============================================================================
   	#Footer
 ==============================================================================*/
 .dk_footer_cta {
     background-color: $bgBeige;
+    padding: 1.5rem 0;
 
+    #success_message {
+        h4 {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
     .dk_flexcontainer_wide {
         justify-content: center;
         align-items: center;
+        padding: 0;
 
         h4 {
             font-family: $header-font-family;
         }
+
+        p {
+            margin-bottom: 0;
+        }
         input {
             width: 320px;
             margin: 0 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.7rem;
         }
 
-        a {
-            padding: 0.5rem;
+        button[type="submit"] {
+            padding: 0.75rem;
             background-color: $mainRed;
             color: #fff;
             font-family: $trajan;
-            margin-bottom: 1rem;
+            margin-bottom: 0.7rem;
+            cursor: pointer;
 
             &:hover {
                 background-color: darken($mainRed, 10%);
             }
         }
+    }
+
+    .ctct-form-footer {
+        font-size: 0.625rem;
+        display: block;
+        width: 95%;
+        max-width: 1000px;
+        margin: 1rem auto 0 auto;
+        text-align: center;
     }
 }
 
@@ -549,6 +790,30 @@ hr.dk_redhr {
     p a {
         color: #fff;
         font-weight: bold;
+    }
+}
+
+.dk_social {
+    a {
+        display: inline-block;
+        margin: 0 0.5rem;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $bgBeige;
+
+        i {
+            color: $bgBeige;
+            font-size: 1.75rem;
+            vertical-align: -17px;
+        }
+
+        &:hover {
+            background-color: $bgBeige;
+
+            i {
+                color: $mainRed;
+            }
+        }
     }
 }
 
@@ -594,6 +859,21 @@ hr.dk_redhr {
             }
         }
     }
+    .dk_home_testimonials {
+        p {
+            padding: 0 1.75rem;
+        }
+        .unslider {
+            .dk_slider_nav {
+                &.next {
+                    right: 0rem;
+                }
+                &.prev {
+                    left: 0rem;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 899px) {
@@ -633,6 +913,25 @@ hr.dk_redhr {
             .dk_bottom {
                 position: relative;
             }
+        }
+    }
+
+    .dk_event {
+        display: block;
+
+        img, .dk_body {
+            display: block;
+        }
+        img {
+            margin-bottom: 1rem;
+            max-width: 380px;
+        }
+        .dk_body {
+            padding-left: 0;
+        }
+
+        h3 {
+            font-size: 1.475rem;
         }
     }
 }

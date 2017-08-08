@@ -1,14 +1,32 @@
+<?php
+/*
+Template Name: Reservations Page
+*/
+?>
+
 <?php get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post();
 	require_once(get_template_directory().'/assets/snippets/get-secpage-fields.php');
+	// echo '<code>$heroCaption = '.$heroCaption.'</code>';
+	// $variable = $homeMeta['field'];
 ?>
 
 <div id="content" class="dk_secondary">
 	<section class="dk_main dk_secmain">
 		<div id="inner-content" class="row">
-			<main id="main" class="large-12 medium-12 small-12 columns" role="main">
-				<img class="dk_floatimg" src="<?php echo $mainImg; ?>" alt="<?php echo $mainImgAlt; ?>">
+			<div class="large-4 medium-6 small-12 columns">
+				<div class="dk_reservations">
+					<!-- Start Livebookings Direct Code -->
+					<script type="text/javascript" src="https://secure.livebookings.com/LBDirect/Assets/Scripts/LBDirectDeploy.js"></script>
+					<script type="text/javascript">LBDirect_Embed({
+					 connectionid: "US-RES-THEREDTAVERN_415090:90804",
+					 language: "en-US"
+					});</script>
+					<!-- End Livebookings Direct Code -->
+				</div>
+			</div>
+			<main id="main" class="large-8 medium-6 small-12 columns" role="main">
 				<?php if(isset($mainHeading) && $mainHeading) { ?>
 					<h1><?php echo $mainHeading; ?></h1>
 				<?php } else { ?>
@@ -17,7 +35,6 @@
 				<?php if(isset($mainSubheading)) { ?>
 					<h2 class="dk_subheading"><?php echo $mainSubheading; ?></h2>
 				<?php } ?>
-				<!-- <h2 class="dk_subheading">Subheading Goes Here</h2> -->
 				<div class="dk_maincontent">
 					<?php the_content() ?>
 				</div>
