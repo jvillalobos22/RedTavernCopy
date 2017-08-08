@@ -28,6 +28,23 @@ Template Name: Homepage
 				<hr>
 			</div>
 		</div> <!-- end #inner-content -->
+		<!-- Best in Chico Content -->
+		<div id="inner-content" class="row">
+			<div class="large-8 medium-7 small-12 columns" role="main">
+				<h2>Vote For Us!</h2>
+				<p>Red Tavern has been nominated for Best Fine Dining in this year's Best of Chico contest! We appreciate our customers' continued support and look forward to serving you for years to come! Please feel free to click the button below to submit your vote!</p>
+				<a href="https://go.newsreview.com/best-of-chico/" target="_blank">Vote Here Now</a>
+			</div> <!-- end #main -->
+			<div class="large-4 medium-5 small-12 columns">
+				<a href="https://go.newsreview.com/best-of-chico/" target="_blank">
+					<img src="http://104.238.96.231/~newredtavern/wp-content/uploads/2017/08/2017best-of-chico-flyer.png" alt="Vote for Red Tavern as Best in Chico for fine dining">
+				</a>
+			</div>
+			<div class="large-12 columns dk_hr_rooster">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/rooster-icon.png" alt="Red Tavern Rooster Icon">
+				<hr>
+			</div>
+		</div> <!-- End Best in Chico Content -->
 		<div class="dk_cardscontainer">
 			<div class="dk_homecard">
 				<div class="dk_top">
