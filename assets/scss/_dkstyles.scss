@@ -116,6 +116,10 @@ hr.dk_redhr {
     }
 }
 
+.dk_hidelarge {
+    display: none;
+}
+
 .dk_flexcontainer_wide {
     display: flex;
     width: 100%;
@@ -382,7 +386,12 @@ hr.dk_redhr {
     }
 }
 
-
+.dk_bestinchico {
+    .dk_hidelarge {
+        margin: 1rem auto;
+        text-align: center;
+    }
+}
 /*==============================================================================
   	#Callouts/Cards
 ==============================================================================*/
@@ -978,6 +987,17 @@ hr.dk_redhr {
                 position: static;
             }
         }
+    }
+
+    .dk_hidesmall {
+        display: none;
+    }
+    .dk_hidelarge {
+        display: block;
+    }
+    .dk_ctr_sm {
+        display: block;
+        margin: 0 auto;
     }
 
     .dk_home_callouts {
