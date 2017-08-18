@@ -164,6 +164,11 @@ hr.dk_redhr {
         justify-content: center;
         color: #fff;
         z-index: 1;
+
+        h2 {
+            padding-top: 10rem;
+            text-align: center;
+        }
     }
 
     &.dk_sechero {
@@ -994,6 +999,10 @@ hr.dk_redhr {
     .dk_hero {
         .dk_caption {
             padding-bottom: 1rem;
+
+            h2 {
+                display: none;
+            }
         }
     }
 

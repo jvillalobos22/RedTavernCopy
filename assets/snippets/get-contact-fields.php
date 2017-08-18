@@ -9,9 +9,9 @@ $contactAddress = $contactMeta['contact-address'];
 $mondayHours = $contactMeta['hours-monday'];
 $tuesdayHours = $contactMeta['hours-tuesday'];
 $wednesdayHours = $contactMeta['hours-wednesday'];
-$thursdayHours = $contactMeta['hours-wednesday'];
-$fridayHours = $contactMeta['hours-wednesday'];
-$saturdayHours = $contactMeta['hours-wednesday'];
-$sundayHours = $contactMeta['hours-wednesday'];
+$thursdayHours = $contactMeta['hours-thursday'];
+$fridayHours = $contactMeta['hours-friday'];
+$saturdayHours = $contactMeta['hours-saturday'];
+$sundayHours = $contactMeta['hours-sunday'];
 
 ?>
