@@ -22,7 +22,7 @@
 			</a>
 		</div>
 		<div class="dk_callout three">
-			<a href="<?php echo $calloutThreeImg; ?>" title="<?php echo $calloutThreeText; ?>">
+			<a href="<?php echo $calloutThreeLink; ?>" title="<?php echo $calloutThreeText; ?>">
 				<div class="dk_img">
 					<img src="<?php echo $calloutThreeImg ?>" alt="<?php echo $calloutThreeImgAlt ?>">
 				</div>
