@@ -12,8 +12,7 @@
 						       	</span>
 						       	<form data-id="embedded_signup:form" class="ctct-custom-form Form" name="embedded_signup" method="POST" action="https://visitor2.constantcontact.com/api/signup">
 								   	<div class="dk_flexcontainer_wide">
-										<h4 style="margin:0;">Join Our Mailing List!</h4>
-										<p></p>
+										<h4 style="margin: 0 0 1rem 0;">Join Our Mailing List!</h4>
 										<!-- The following code must be included to ensure your sign-up form works properly. -->
 										<input data-id="ca:input" type="hidden" name="ca" value="6de89e51-be9f-4412-9160-12435c1c2408">
 										<input data-id="list:input" type="hidden" name="list" value="1206804359">
