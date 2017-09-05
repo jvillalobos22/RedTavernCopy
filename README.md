@@ -1,6 +1,6 @@
 # Red Tavern WordPress Template
 
-This WordPress template was designed and developed by DK Web Design for use by Red Tavern. The live site can be found at [redtavern.com](http://104.238.96.231/~newredtavern/).
+This WordPress template was designed and developed by DK Web Design for use by Red Tavern. The live site can be found at [redtavern.com](http://redtavern.com/).
 
 Below you will find information that may be useful to those working on this template in the future.
 

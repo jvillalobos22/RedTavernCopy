@@ -20,7 +20,7 @@ var createClickHandler = function(arr, menu) {
         setActiveLink(menu);
         // Update params
         //setGetParameter('currentmenu', menu);
-        history.pushState(null, null, '/~newredtavern/menus/?currentmenu='+menu);
+        history.pushState(null, null, '/menus/?currentmenu='+menu);
     };
 }
 

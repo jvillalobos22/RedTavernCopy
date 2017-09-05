@@ -34,16 +34,16 @@ Template Name: Homepage
 				<p>Red Tavern has been nominated for Best Fine Dining in this year's Best of Chico contest! We appreciate our customers' continued support and look forward to serving you for years to come! Please feel free to click the button below to submit your vote!</p>
 				<a href="https://go.newsreview.com/best-of-chico/" target="_blank">Vote Here Now</a>
 				<a class="dk_hidelarge" href="https://go.newsreview.com/best-of-chico/" target="_blank">
-					<img src="http://104.238.96.231/~newredtavern/wp-content/uploads/2017/08/2017best-of-chico-flyer.jpg" alt="Vote for Red Tavern as Best in Chico for fine dining">
+					<img src="http://redtavern.com/wp-content/uploads/2017/08/2017best-of-chico-flyer.jpg" alt="Vote for Red Tavern as Best in Chico for fine dining">
 				</a>
 				<h2 style="margin-top: 2rem;">Wine Spectator’s 2017 Award of Excellence for Red Tavern</h2>
 				<p>We’re excited to announce that Red Tavern was a recipient of <em>Wine Spectator’s</em> 2017 Award of Excellence! This award is given to selected businesses  which have wine lists that typically offer at least 90 selections, feature a well-chosen assortment of quality producers, along with a thematic match to the menu.</p>
-				<img class="dk_ctr_sm" src="http://104.238.96.231/~newredtavern/wp-content/uploads/2017/08/AE17color.png" alt="Wine Spectator Award of Excellence 2017">
+				<img class="dk_ctr_sm" src="http://redtavern.com/wp-content/uploads/2017/08/AE17color.png" alt="Wine Spectator Award of Excellence 2017">
 
 			</div> <!-- end #main -->
 			<div class="large-4 medium-5 small-12 columns dk_hidesmall">
 				<a href="https://go.newsreview.com/best-of-chico/" target="_blank">
-					<img src="http://104.238.96.231/~newredtavern/wp-content/uploads/2017/08/2017best-of-chico-flyer.jpg" alt="Vote for Red Tavern as Best in Chico for fine dining">
+					<img src="http://redtavern.com/wp-content/uploads/2017/08/2017best-of-chico-flyer.jpg" alt="Vote for Red Tavern as Best in Chico for fine dining">
 				</a>
 			</div>
 			<div class="large-12 columns dk_hr_rooster">
