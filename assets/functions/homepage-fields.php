@@ -83,15 +83,18 @@ function show_homepage_meta_box() {
             <label for="homepage[homepage-subheading]">Homepage Subheading</label>
             <input type="text" name="homepage[homepage-subheading]" id="homepage[homepage-subheading]" class="dk_full " value="<?php if ( isset ( $meta['homepage-subheading'] ) ) echo $meta['homepage-subheading']; ?>">
             <!-- homepage[home-maincontent-image] -->
-            <label for="homepage[home-maincontent-image]">Image Upload</label><small>Hint: You won't see the new image below until you click update</small>
-            <input type="text" name="homepage[home-maincontent-image]" id="homepage[home-maincontent-image]" class="meta-image " value="<?php if ( isset ( $meta['home-maincontent-image'] ) ) echo $meta['home-maincontent-image']; ?>">
-            <input type="button" class="button image-upload" value="Browse">
-            <?php if ( isset ( $meta['home-maincontent-image'] ) ) { ?>
-            <div class="image-preview"><img src="<?php echo $meta['home-maincontent-image']; ?>"></div>
-            <?php } ?>
-            <!-- homepage[home-maincontent-image-alt] -->
-            <label for="homepage[home-maincontent-image-alt]">Image Alt Tag</label><small>Provide a brief description of the image. This is important for accesibility and SEO purposes.</small>
-            <input type="text" name="homepage[home-maincontent-image-alt]" id="homepage[home-maincontent-image-alt]" class="" value="<?php if ( isset ( $meta['home-maincontent-image-alt'] ) ) echo $meta['home-maincontent-image-alt']; ?>">
+
+            <div class="dk_option_group">
+                <label for="homepage[home-maincontent-image]">Main Content Image</label><small>Dimensions: 450×372</small>
+                <input type="hidden" name="homepage[home-maincontent-image]" id="homepage[home-maincontent-image]" class="dk-img-upload" value="<?php if ( isset ( $meta['home-maincontent-image'] ) ) echo $meta['home-maincontent-image']; ?>">
+                <?php if ( isset ( $meta['home-maincontent-image'] ) ) { ?>
+                <img class="dk-img-preview md" src="<?php echo $meta['home-maincontent-image']; ?>">
+                <?php } ?>
+                <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+                <!-- homepage[home-maincontent-image-alt] -->
+                <label for="homepage[home-maincontent-image-alt]">Image Alt Tag</label><small>Provide a brief description of the image. This is important for accesibility and SEO purposes.</small>
+                <input type="text" name="homepage[home-maincontent-image-alt]" id="homepage[home-maincontent-image-alt]" class="" value="<?php if ( isset ( $meta['home-maincontent-image-alt'] ) ) echo $meta['home-maincontent-image-alt']; ?>">
+            </div>
         </fieldset>
 
         <fieldset class="dk_subsection_parent">
@@ -106,12 +109,15 @@ function show_homepage_meta_box() {
                         <label for="homepage[card-<?php echo $card; ?>-heading]">Heading</label>
                         <input type="text" name="homepage[card-<?php echo $card; ?>-heading]" id="homepage[card-<?php echo $card; ?>-heading]" class="" value="<?php if ( isset ( $meta['card-'.$card.'-heading'] ) ) echo $meta['card-'.$card.'-heading']; ?>">
                         <!-- card-x-image -->
-                        <label for="homepage[card-<?php echo $card; ?>-image]">Image Upload</label>
-                        <input type="text" name="homepage[card-<?php echo $card; ?>-image]" id="homepage[card-<?php echo $card; ?>-image]" class="meta-image " value="<?php if ( isset ( $meta['card-'.$card.'-image'] ) ) echo $meta['card-'.$card.'-image']; ?>">
-                        <input type="button" class="button image-upload" value="Browse">
-                        <?php if ( isset ( $meta['card-'.$card.'-image'] ) ) { ?>
-                		<div class="image-preview"><img src="<?php echo $meta['card-'.$card.'-image']; ?>"></div>
-                		<?php } ?>
+                        <div class="dk_option_group">
+                            <label for="homepage[card-<?php echo $card; ?>-image]">Image</label><small>Dimensions: 440×244</small>
+                            <input type="hidden" name="homepage[card-<?php echo $card; ?>-image]" id="homepage[card-<?php echo $card; ?>-image]" class="dk-img-upload" value="<?php if ( isset ( $meta['card-'.$card.'-image'] ) ) echo $meta['card-'.$card.'-image']; ?>">
+                            <?php if ( isset ( $meta['card-'.$card.'-image'] ) ) { ?>
+                            <img class="dk-img-preview md" src="<?php echo $meta['card-'.$card.'-image']; ?>">
+                            <?php } ?>
+                            <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+                        </div>
+
                         <!-- card-x-imagealt -->
                         <label for="homepage[card-<?php echo $card; ?>-imagealt]">Image Alt Tag</label><small>Provide a brief description of the image. This is important for accesibility and SEO purposes.</small>
                         <input type="text" name="homepage[card-<?php echo $card; ?>-imagealt]" id="homepage[card-<?php echo $card; ?>-imagealt]" class="" value="<?php if ( isset ( $meta['card-'.$card.'-imagealt'] ) ) echo $meta['card-'.$card.'-imagealt']; ?>">
@@ -144,12 +150,14 @@ function show_homepage_meta_box() {
                         <label for="homepage[sunday-'.$callout.'-subheading]">Subheading</label>
                         <input type="text" name="homepage[sunday-<?php echo $callout; ?>-subheading]" id="homepage[sunday-<?php echo $callout; ?>-subheading]" class="" value="<?php if ( isset ( $meta['sunday-'.$callout.'-subheading'] ) ) echo $meta['sunday-'.$callout.'-subheading']; ?>">
                         <!-- sunday-x-image -->
-                        <label for="homepage[sunday-<?php echo $callout; ?>-image]">Image Upload</label>
-                        <input type="text" name="homepage[sunday-<?php echo $callout; ?>-image]" id="homepage[sunday-<?php echo $callout; ?>-image]" class="meta-image " value="<?php if ( isset ( $meta['sunday-'.$callout.'-image'] ) ) echo $meta['sunday-'.$callout.'-image']; ?>">
-                        <input type="button" class="button image-upload" value="Browse">
-                        <?php if ( isset ( $meta['sunday-'.$callout.'-image'] ) ) { ?>
-                		<div class="image-preview"><img src="<?php echo $meta['sunday-'.$callout.'-image']; ?>"></div>
-                		<?php } ?>
+                        <div class="dk_option_group">
+                            <label for="homepage[sunday-<?php echo $callout; ?>-image]">Image</label><small>Dimensions: 163×264</small>
+                            <input type="hidden" name="homepage[sunday-<?php echo $callout; ?>-image]" id="homepage[sunday-<?php echo $callout; ?>-image]" class="dk-img-upload" value="<?php if ( isset ( $meta['sunday-'.$callout.'-image'] ) ) echo $meta['sunday-'.$callout.'-image']; ?>">
+                            <?php if ( isset ( $meta['sunday-'.$callout.'-image'] ) ) { ?>
+                            <img class="dk-img-preview xsm" src="<?php echo $meta['sunday-'.$callout.'-image']; ?>">
+                            <?php } ?>
+                            <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+                        </div>
                         <!-- sunday-x-imagealt -->
                         <label for="homepage[sunday-<?php echo $callout; ?>-imagealt]">Image Alt Tag</label><small>Provide a brief description of the image. This is important for accesibility and SEO purposes.</small>
                         <input type="text" name="homepage[sunday-<?php echo $callout; ?>-imagealt]" id="homepage[sunday-<?php echo $callout; ?>-imagealt]" class="" value="<?php if ( isset ( $meta['sunday-'.$callout.'-imagealt'] ) ) echo $meta['sunday-'.$callout.'-imagealt']; ?>">

@@ -43,6 +43,22 @@
         }
     }
 
+    .dk_imgbtn, .dk-img-preview {
+        max-width: 400px;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .dk-img-preview.full {
+        max-width: 700px;
+    }
+    .dk-img-preview.md {
+        max-width: 500px;
+    }
+    .dk-img-preview.sm {
+        max-width: 320px;
+    }
+
     small {
         line-height: 1.4;
     }
@@ -254,6 +270,9 @@ fieldset {
     .dk-img-preview.sm {
         max-width: 320px;
     }
+    .dk-img-preview.xsm {
+        max-width: 170px;
+    }
     input {
         padding: 0.5rem;
     }
@@ -272,8 +291,10 @@ fieldset {
     .dk-img-preview.md {
         max-width: 500px;
     }
-
     .dk-img-preview.sm {
         max-width: 320px;
+    }
+    .dk-img-preview.xsm {
+        max-width: 170px;
     }
 }

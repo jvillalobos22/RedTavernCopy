@@ -48,17 +48,18 @@ function show_secpage_meta_box() {
         <!-- secpage[secpage-subheading] -->
         <label for="secpage[secpage-subheading]">Page Subheading</label>
         <input type="text" name="secpage[secpage-subheading]" id="secpage[secpage-subheading]" class="dk_full " value="<?php if ( isset ( $meta['secpage-subheading'] ) ) echo $meta['secpage-subheading']; ?>">
-        <!-- secpage[secpage-maincontent-image] -->
         <?php
             $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
             if($pageTemplate == 'template-secondary.php' ) {
         ?>
-            <label for="secpage[secpage-maincontent-image]">Image Upload</label><small>Hint: You won't see the new image below until you click update</small>
-            <input type="text" name="secpage[secpage-maincontent-image]" id="secpage[secpage-maincontent-image]" class="meta-image " value="<?php if ( isset ( $meta['secpage-maincontent-image'] ) ) echo $meta['secpage-maincontent-image']; ?>">
-            <input type="button" class="button image-upload" value="Browse">
-            <?php if ( isset ( $meta['secpage-maincontent-image'] ) ) { ?>
-            <div class="image-preview"><img src="<?php echo $meta['secpage-maincontent-image']; ?>"></div>
-            <?php } ?>
+        <!-- secpage[secpage-maincontent-image] -->
+        <label for="secpage[secpage-maincontent-image]">Main Content Image</label>
+        <?php if ( isset ( $meta['secpage-maincontent-image'] ) ) { ?>
+            <img class="dk-img-preview" src="<?php echo $meta['secpage-maincontent-image']; ?>">
+        <?php } ?>
+
+            <input type="button" class="button button-secondary dk_imgbtn" value="Upload/Edit Image" >
+            <input type="hidden" class="dk-img-upload" name="secpage[secpage-maincontent-image]" id="secpage[secpage-maincontent-image]" value="<?php if ( isset ( $meta['secpage-maincontent-image'] ) ) echo $meta['secpage-maincontent-image']; ?>">
             <!-- secpage[secpage-maincontent-image-alt] -->
             <label for="secpage[secpage-maincontent-image-alt]">Image Alt Tag</label><small>Provide a brief description of the image. This is important for accesibility and SEO purposes.</small>
             <input type="text" name="secpage[secpage-maincontent-image-alt]" id="secpage[secpage-maincontent-image-alt]" class="" value="<?php if ( isset ( $meta['secpage-maincontent-image-alt'] ) ) echo $meta['secpage-maincontent-image-alt']; ?>">
