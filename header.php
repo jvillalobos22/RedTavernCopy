@@ -1,7 +1,6 @@
 <!doctype html>
 <?php
 $images_directory = get_template_directory_uri().'/assets/images';
-// echo '$images_directory = '.$images_directory;
 
 ?>
   <html class="no-js"  <?php language_attributes(); ?>>
@@ -40,12 +39,21 @@ $images_directory = get_template_directory_uri().'/assets/images';
 
 		<!-- Drop Google Analytics here -->
 		<!-- end analytics -->
-
+        <meta name="google-site-verification" content="8FWl-sFIzspAjny6Pc5caxyxVieTlLilVEK-EKhMLAc" />
 	</head>
 
 	<!-- Uncomment this line if using the Off-Canvas Menu -->
 
 	<body <?php body_class(); ?>>
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107008491-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-107008491-1');
+        </script>
 
 		<div class="off-canvas-wrapper">
 
