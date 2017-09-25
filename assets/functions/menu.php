@@ -42,6 +42,8 @@ function joints_off_canvas_nav() {
 }
 
 class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
+	private $curItem;
+
     function start_lvl(&$output, $depth = 0, $args = Array() ) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"vertical menu\">\n";
@@ -59,18 +61,6 @@ function joints_footer_links() {
     	'fallback_cb' => ''  							// Fallback function
 	));
 } /* End Footer Menu */
-
-// The Food Menu Nav
-// function joints_foodmenu_links() {
-//     wp_nav_menu(array(
-//     	'container' => 'false',                         // Remove nav container
-//     	'menu' => __( 'Food Menu Nav', 'jointswp' ),   	// Nav name
-//     	'menu_class' => 'foodmenu',      					// Adding custom nav class
-//     	'theme_location' => 'menu-nav',             // Where it's located in the theme
-//         'depth' => 1,                                   // Limit the depth of the nav
-//     	'fallback_cb' => ''  							// Fallback function
-// 	));
-// } /* End Food Menu Nav */
 
 // Header Fallback Menu
 function joints_main_nav_fallback() {

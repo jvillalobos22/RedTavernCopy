@@ -22,3 +22,14 @@ jQuery(document).ready(function() {
   });
 
 });
+
+jQuery(document).ready(function() {
+    jQuery("#off-canvas").find(".is-accordion-submenu").each(function(){
+        var parent = jQuery(this).parents('li');
+        var listitem = document.createElement('li');
+        var copy = parent.children('a').clone().prependTo(listitem);
+
+        // listitem.insertAdjacentHTML( 'beforeend', copy );
+        jQuery(this).prepend(listitem);
+    });
+});
