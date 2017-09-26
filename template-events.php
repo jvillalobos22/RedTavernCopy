@@ -52,7 +52,11 @@ Template Name: Events Page
 							$eventDate = date_create($eventmeta['event-date']);
 						?>
 							<li class="dk_event">
-								<img src="<?php echo $eventmeta['event-image']; ?>" alt="addalt">
+								<?php if($eventmeta['event-image']) { ?>
+									<img src="<?php echo $eventmeta['event-image']; ?>" alt="Red Tavern upcoming event: <?php echo the_title() ?>">
+								<?php } else { ?>
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/redtavern-logo.png" alt="Red Tavern upcoming event: <?php echo the_title() ?>">
+								<?php } ?>
 								<div class="dk_body">
 									<h3><?php echo the_title() ?></h3>
 									<span class="dk_date"><?php echo date_format($eventDate,"F j"); ?></span>
